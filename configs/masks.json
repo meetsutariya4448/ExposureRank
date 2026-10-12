@@ -1,0 +1,1 @@
+{"mechanisms":["uniform","popularity","outcome"],"densities":[0.1,0.25,0.5],"epsilon":0.02,"beta":2,"offset_fit":"validation only","polished_floors":[0.1],"floor_densities":[0.25,0.5],"clip_weights":[10,50],"estimators":"observed values and observed probabilities only; HT linear DCG/reward"}

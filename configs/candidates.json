@@ -1,0 +1,1 @@
+{"samplers":["uniform","popularity"],"sizes":[50,100,500],"full_endpoint":true,"replace":false,"popularity_weight":"0.1 + training-only smoothed item completion rate","forced_positives":false,"law":"NumPy Generator.choice weighted without replacement; pinned version"}

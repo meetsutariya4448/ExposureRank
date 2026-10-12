@@ -1,0 +1,14 @@
+[project]
+name = "exposurerank"
+version = "1.0.0"
+description = "Fixed-ranker evaluation under synthetic missing feedback and sampled candidates"
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy", "pandas", "duckdb", "torch", "scipy", "matplotlib", "pytest", "nbformat", "nbclient", "ipykernel", "psutil"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

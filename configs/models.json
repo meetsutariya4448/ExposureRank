@@ -1,0 +1,1 @@
+{"families":["mf","neural"],"dimensions":[16,32],"l2":[0.00001,0.0001,0.001],"grid_seed":17,"selected_seeds":[17,29,43],"max_epochs":15,"batch_size":8192,"lr":0.001,"patience":3,"min_delta":0.0001,"bias_l2":0.001,"item_smoothing":20,"dropout":0.1,"neural_layers":[32,16],"device":"cpu","threads":1,"weight_decay":0,"max_rss_gib":8,"max_projected_training_hours":8}

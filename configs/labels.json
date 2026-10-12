@@ -1,0 +1,1 @@
+{"binary_threshold":1.0,"reward_cap":2.0,"sensitivity_thresholds":[0.5,1.0,2.0],"sensitivity_caps":[1.0,2.0,5.0],"ratio_source":"published","discrepancy_atol":0.0001,"discrepancy_rtol":0.000001,"untimed":"retain","missing_cells":"excluded, never negative"}

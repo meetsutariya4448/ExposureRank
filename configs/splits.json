@@ -1,0 +1,1 @@
+{"salt":"ExposureRank-split-v1","fractions":[0.6,0.2,0.2],"train_user_min":100,"train_item_min":20,"catalog_min":20,"tie_salt":"ExposureRank-ties-v1","expected_counts":[2806319,934854,935397]}

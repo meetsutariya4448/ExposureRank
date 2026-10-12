@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+data/
+artifacts/
+dist/
+evidence/logs/
+evidence/rebuild/
+.DS_Store
+*.egg-info/
+reports/tables/per_user*
+*.duckdb*
