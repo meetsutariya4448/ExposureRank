@@ -6,6 +6,8 @@ artifacts/
 dist/
 evidence/logs/
 evidence/rebuild/
+evidence/reproduction*.log
+evidence/tests.xml
 .DS_Store
 *.egg-info/
 reports/tables/per_user*

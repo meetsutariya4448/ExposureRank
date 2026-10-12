@@ -1,0 +1,140 @@
+{
+  "status": "passed",
+  "source_revision": "97e49bd25e03d014b872dd5639fafabed0da2ceb",
+  "fresh_environment": true,
+  "complete_training_and_simulation_rebuilt": true,
+  "seconds": 1047.9171565419965,
+  "compared_outputs": [
+    {
+      "path": "manifests/split.json",
+      "result": "exact structural equality"
+    },
+    {
+      "path": "manifests/catalogs.json",
+      "result": "exact structural equality"
+    },
+    {
+      "path": "manifests/data.json",
+      "result": "exact structural equality"
+    },
+    {
+      "path": "configs/selected_models.json",
+      "result": "exact choices,epochs,validation metric; runtime/provenance intentionally differ"
+    },
+    {
+      "path": "data/derived/pairs.npz",
+      "result": "all arrays byte-exact values; container timestamps ignored"
+    },
+    {
+      "path": "artifacts/scores/test.npz",
+      "result": "all arrays byte-exact values; container timestamps ignored"
+    },
+    {
+      "path": "artifacts/scores/reference.npz",
+      "result": "all arrays byte-exact values; container timestamps ignored"
+    },
+    {
+      "path": "reports/tables/baseline_validation.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/candidate_repetitions.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/candidate_results.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/candidate_reversals.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/candidate_user_uncertainty.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/full_observation_endpoint.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/full_reference.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/linear_correction.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/linear_repetitions.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/mask_repetitions.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/mask_results.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/mask_reversals.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/mask_user_uncertainty.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/order_stability.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/primary_contrasts.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/seed_sensitivity.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/split_counts.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/target_sensitivity.csv",
+      "result": "exact"
+    },
+    {
+      "path": "evidence/mask_manifest.json",
+      "result": "every realized draw hash exact"
+    },
+    {
+      "path": "evidence/candidate_manifest.json",
+      "result": "every realized draw hash exact"
+    }
+  ],
+  "selection_and_reversal_categories_exact": true,
+  "all_private_score_arrays_exact": true,
+  "public_figures": "source tables checked; PNG metadata bytes not required identical",
+  "log": "evidence/reproduction.log",
+  "statistical_source_hashes": {
+    "src/exposurerank/__init__.py": "5e1359abc2267f828b776f1e305884be0981020cbacf2c776381361ded728e32",
+    "src/exposurerank/baselines.py": "0521ccb063cb3153a46420f4408de6c567e17c740582cd9c01c5e33be83b182d",
+    "src/exposurerank/candidates.py": "056f38b07b6d915774ef95191724f96faca20ef4e946aac9883263bcadbe245a",
+    "src/exposurerank/data.py": "8ea847bf9c72cadd00395e86a656354a3ce3b48f75336bc2908241ef37066096",
+    "src/exposurerank/evaluation.py": "8f13e19a38471043d2fc81b30618923cf6818c6ac5e57cddd4490619e16dd154",
+    "src/exposurerank/factorization.py": "fd70666c6a0b3e6300aaf72654daf06c5b33ea3a7d1211348d5c6910b6d46e00",
+    "src/exposurerank/io.py": "e9fe30045f647c4f99bd36473731552a8c8e96ccb53b3b15bf73fdcfbf69e46c",
+    "src/exposurerank/masks.py": "47a01aa226ef5850f81919b1f62f66dc37bcd04cd284c39764ba30b7d259e619",
+    "src/exposurerank/metrics.py": "334bc16aee4d38db336804f88d56a9356c3e180dc287465fabd595b6380fc036",
+    "src/exposurerank/neural.py": "ec50b21018f3ff9c5c0389b736e4bc0f2fa97bf80e8744b27c44e518f80e8dba",
+    "src/exposurerank/ranking.py": "e88e144191c3813b56c27395039595f472bb64745298b852212152d8665ffc30",
+    "src/exposurerank/reporting.py": "e9b165fab885d5babffcc7b2e531d33577e7ca00d45160366109306e3b097398",
+    "src/exposurerank/simulation.py": "0e3a3c3e3a264ef479117d46519cbeb4cbe7114f1dfd83feec61f046d55bffc7",
+    "src/exposurerank/training.py": "88a534173402097a8bda1614432c31d03b2076c38e77acf543a4346808a2556d",
+    "src/exposurerank/uncertainty.py": "d37649ba7f49a57222d95c4d7127c9caf281db0afda0ccdece27d9a7e9517a32",
+    "src/exposurerank/weighting.py": "8bf35944e03bb23b81f52e5aec27948fdbb84053a991857943ce4c25b4a3bd8c"
+  },
+  "final_changes_after_rebuild": "Documentation, final evidence/status and release exclusion filter only; scientific source modules unchanged."
+}

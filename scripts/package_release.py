@@ -20,7 +20,7 @@ for p in ROOT.rglob('*'):
     if len(rel.parts)==1 and p.name in top:files.append(p)
     elif rel.parts[0] in allowed_roots:
         if p.suffix in {'.pt','.npz','.npy','.parquet','.duckdb','.csv.gz'}:raise AssertionError('Private asset entered public subtree: '+str(rel))
-        if 'per_user' in p.name or 'rebuild' in rel.parts or p.name=='reproduction.log':continue
+        if 'per_user' in p.name or 'rebuild' in rel.parts or (p.name.startswith('reproduction') and p.suffix=='.log'):continue
         if p.suffix in {'.py','.sql','.json','.csv','.md','.txt','.toml','.lock','.ipynb','.png','.svg','.log'}:files.append(p)
 files=sorted(files);inventory=[{'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in files]
 write_json(ROOT/'evidence/release_inventory.json',{'source_revision':revision(),'files':inventory,'excluded':'all data/artifacts/environments, real user-level outputs, reproduction temp tree','publication':'local ZIP only'})
