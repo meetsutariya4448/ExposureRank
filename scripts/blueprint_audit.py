@@ -13,6 +13,7 @@ from exposurerank.masks import offset,standardized_popularity
 from exposurerank.training import make_model,score,seed_all
 from exposurerank.uncertainty import paired_bootstrap
 import torch
+from scipy.special import expit
 
 checks=[]
 def passed(requirement,source,evidence):checks.append({'requirement':requirement,'blueprint':source,'status':'passed','evidence':evidence})
@@ -85,7 +86,16 @@ o=read_json(ROOT/'configs/mask_offsets.json');z=standardized_popularity(base['po
 for key,value in o['offsets'].items():
     mechanism,alpha,eps=key.split('|');zz=z[val['i']] if mechanism=='popularity' else 2*val['y']-1
     assert abs(offset(zz,float(alpha),float(eps))-value)<1e-12
-passed('Registered validation-frozen Bernoulli probability laws and observed-only linear HT','06,11','every density offset recomputed from validation; exhaustive HT expectation/variance and access tests; frozen score/mask manifests')
+    # Independently recover the same monotone root with plain bisection,
+    # using weighted unique values rather than the implementation's Brent solver.
+    unique,counts=np.unique(zz,return_counts=True);lo,hi=-80.,80.
+    for _ in range(80):
+        mid=(lo+hi)/2
+        density=np.average(float(eps)+(1-2*float(eps))*expit(mid+2*unique),weights=counts)
+        if density<float(alpha):lo=mid
+        else:hi=mid
+    assert abs((lo+hi)/2-value)<1e-10
+passed('Registered validation-frozen Bernoulli probability laws and observed-only linear HT','06,11','every density offset verified against independent bisection; exhaustive HT expectation/variance and access tests; frozen score/mask manifests')
 
 original=ROOT/'evidence/rebuild/original_tables'
 for name in ('full_reference.csv','primary_contrasts.csv','seed_sensitivity.csv','mask_repetitions.csv','candidate_repetitions.csv','linear_repetitions.csv'):
