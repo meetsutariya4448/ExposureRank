@@ -1,0 +1,11 @@
+split,model,binary_log_loss,observed_pairs,clip_epsilon,purpose
+validation,global,0.6300737415377551,934854,1e-12,postselection diagnostic; never used to reselect rankers
+validation,item,0.48859118169196625,934854,1e-12,postselection diagnostic; never used to reselect rankers
+validation,bias,0.6085373888289776,934854,1e-12,postselection diagnostic; never used to reselect rankers
+validation,mf,0.43958605032187537,934854,1e-12,postselection diagnostic; never used to reselect rankers
+validation,neural,0.43166317425943435,934854,1e-12,postselection diagnostic; never used to reselect rankers
+test,global,0.629218902933053,935397,1e-12,postselection diagnostic; never used to reselect rankers
+test,item,0.48746879592769154,935397,1e-12,postselection diagnostic; never used to reselect rankers
+test,bias,0.6076549638886054,935397,1e-12,postselection diagnostic; never used to reselect rankers
+test,mf,0.43846915410172793,935397,1e-12,postselection diagnostic; never used to reselect rankers
+test,neural,0.43068868804506244,935397,1e-12,postselection diagnostic; never used to reselect rankers

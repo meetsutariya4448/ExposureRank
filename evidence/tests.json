@@ -1,9 +1,9 @@
 {
-  "tests": 33,
+  "tests": 43,
   "failures": 0,
   "errors": 0,
   "skipped": 0,
-  "seconds": 2.729585415989277,
-  "source_revision": "8cae7d885336600fb55470336721a5c5ec3969ef",
+  "seconds": 3.206756375002442,
+  "source_revision": "ccaa524ce69367f167714d3353b350aaf16b0dbc",
   "exit_code": 0
 }

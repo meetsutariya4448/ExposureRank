@@ -20,3 +20,5 @@ Local implementation only. No public publishing, paid cloud, other-project edits
 | E13 | passed | Full fresh-environment training/simulation rebuild passed; tests, claims, two executed notebooks,40 interview questions and three honest bullet candidates |
 
 See evidence/status.json for actual source revisions and stage logs for failures/runtimes.
+
+Blueprint conformance audit: mandatory core passed10 requirement groups,43 tests and48 clean-rebuild output comparisons. See docs/blueprint_conformance_audit.md and evidence/blueprint_conformance.json. All16 rebuilt checkpoint state dictionaries match exactly. Original headlines and draw streams are unchanged. This is core plus selected polish; the interactive viewer remains the separate presentation step, and E10 OPE is optional/skipped.

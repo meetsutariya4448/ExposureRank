@@ -12,6 +12,8 @@ The original implementation completed the core experiments but omitted three spe
 
 Additional checks include validation/test predictive log loss, descriptive three-seed mean/SD/range, finite-probability and index validation, the declared zero-variance popularity fallback, SQL NULL rejection, an independent scalar ranking-metric reference and an actual masked-nDCG bias counterexample. Candidate summary columns now say difference/shift from the full task rather than suggesting estimator bias for the same task.
 
+Numerical calibration caveat: the original outcome-offset solver reduced float32 arrays. Independent float64 bisection measures at most8.33e-7 offset difference and1.01e-7 expected validation-density difference; popularity offsets agree within1e-10. Each difference is recorded in evidence/probability_calibration_audit.json. The frozen offsets and random draws are retained. This is a disclosed numerical substitution/precision limitation, not a retuned test design.
+
 ## Requirement and evidence matrix
 
 | Blueprint requirement | Executed evidence |

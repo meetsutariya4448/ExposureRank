@@ -118,7 +118,7 @@
       "offset": 1.0627603283759848
     }
   ],
-  "seconds": 351.9323770829942,
+  "seconds": 362.6227985830046,
   "scores_sha256": "545d2ea9e24181238d432458b3b7e67f9826ecd37d165667059935d83830e9b8",
   "design": "independent Bernoulli cells; shared mask across five models; simulator truth never passed to HT"
 }

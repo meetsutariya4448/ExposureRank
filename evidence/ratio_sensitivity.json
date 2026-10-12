@@ -1,0 +1,7 @@
+{
+  "all_source_discrepancies": 228,
+  "excluded_test_pairs": 41,
+  "all_test_users_retained": 1411,
+  "minimum_retained_test_catalog": 595,
+  "policy": "prespecified graded-reward sensitivity, fixed scores/rank restriction; no refitting or target selection"
+}

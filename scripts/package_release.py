@@ -8,6 +8,10 @@ parser.add_argument('--name',default='ExposureRank_v1.0.zip')
 args=parser.parse_args()
 if Path(args.name).name!=args.name or not args.name.endswith('.zip') or '..' in args.name:
     parser.error('--name must be a plain ZIP filename')
+if args.name=='ExposureRank_blueprint_verified.zip':
+    assert read_json(ROOT/'evidence/blueprint_conformance.json')['core_status']=='passed'
+    for row in read_json(ROOT/'evidence/final_source_verification.json')['matching_source_files']:
+        assert sha(ROOT/row['path'])==row['sha256']
 
 assert read_json(ROOT/'evidence/reproduction.json')['status']=='passed'
 assert read_json(ROOT/'evidence/claim_audit.json')['status']=='passed'

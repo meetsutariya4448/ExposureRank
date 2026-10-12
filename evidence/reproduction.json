@@ -1,9 +1,9 @@
 {
   "status": "passed",
-  "source_revision": "97e49bd25e03d014b872dd5639fafabed0da2ceb",
+  "source_revision": "480e59d77dd05722ec03562870cf4ab12ebd1a21",
   "fresh_environment": true,
   "complete_training_and_simulation_rebuilt": true,
-  "seconds": 1047.9171565419965,
+  "seconds": 1105.1032987910003,
   "compared_outputs": [
     {
       "path": "manifests/split.json",
@@ -32,6 +32,82 @@
     {
       "path": "artifacts/scores/reference.npz",
       "result": "all arrays byte-exact values; container timestamps ignored"
+    },
+    {
+      "path": "artifacts/simulations/candidate_user_differences_0.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/candidate_user_differences_1.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/candidate_user_differences_2.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/candidate_user_differences_3.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/candidate_user_differences_4.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/candidate_user_differences_5.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_0.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_1.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_10.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_11.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_12.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_2.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_3.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_4.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_5.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_6.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_7.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_8.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
+    },
+    {
+      "path": "artifacts/simulations/mask_user_differences_9.npz",
+      "result": "exact private per-user/per-repetition differences and contrast identities"
     },
     {
       "path": "reports/tables/baseline_validation.csv",
@@ -90,11 +166,19 @@
       "result": "exact"
     },
     {
+      "path": "reports/tables/predictive_loss.csv",
+      "result": "exact"
+    },
+    {
       "path": "reports/tables/primary_contrasts.csv",
       "result": "exact"
     },
     {
       "path": "reports/tables/seed_sensitivity.csv",
+      "result": "exact"
+    },
+    {
+      "path": "reports/tables/seed_summary.csv",
       "result": "exact"
     },
     {
@@ -116,25 +200,24 @@
   ],
   "selection_and_reversal_categories_exact": true,
   "all_private_score_arrays_exact": true,
-  "public_figures": "source tables checked; PNG metadata bytes not required identical",
-  "log": "evidence/reproduction.log",
   "statistical_source_hashes": {
     "src/exposurerank/__init__.py": "5e1359abc2267f828b776f1e305884be0981020cbacf2c776381361ded728e32",
     "src/exposurerank/baselines.py": "0521ccb063cb3153a46420f4408de6c567e17c740582cd9c01c5e33be83b182d",
     "src/exposurerank/candidates.py": "056f38b07b6d915774ef95191724f96faca20ef4e946aac9883263bcadbe245a",
     "src/exposurerank/data.py": "8ea847bf9c72cadd00395e86a656354a3ce3b48f75336bc2908241ef37066096",
-    "src/exposurerank/evaluation.py": "8f13e19a38471043d2fc81b30618923cf6818c6ac5e57cddd4490619e16dd154",
+    "src/exposurerank/evaluation.py": "4785aba1c0c6475d90dc8904428a86b1cb3e5799764b5854bb3531016272d3d5",
     "src/exposurerank/factorization.py": "fd70666c6a0b3e6300aaf72654daf06c5b33ea3a7d1211348d5c6910b6d46e00",
     "src/exposurerank/io.py": "e9fe30045f647c4f99bd36473731552a8c8e96ccb53b3b15bf73fdcfbf69e46c",
-    "src/exposurerank/masks.py": "47a01aa226ef5850f81919b1f62f66dc37bcd04cd284c39764ba30b7d259e619",
+    "src/exposurerank/masks.py": "7b57ef78c5ae6edfa481ad3c460ba8d8ab6394302994abb3540ea8377a9067a0",
     "src/exposurerank/metrics.py": "334bc16aee4d38db336804f88d56a9356c3e180dc287465fabd595b6380fc036",
     "src/exposurerank/neural.py": "ec50b21018f3ff9c5c0389b736e4bc0f2fa97bf80e8744b27c44e518f80e8dba",
     "src/exposurerank/ranking.py": "e88e144191c3813b56c27395039595f472bb64745298b852212152d8665ffc30",
     "src/exposurerank/reporting.py": "e9b165fab885d5babffcc7b2e531d33577e7ca00d45160366109306e3b097398",
-    "src/exposurerank/simulation.py": "0e3a3c3e3a264ef479117d46519cbeb4cbe7114f1dfd83feec61f046d55bffc7",
-    "src/exposurerank/training.py": "88a534173402097a8bda1614432c31d03b2076c38e77acf543a4346808a2556d",
-    "src/exposurerank/uncertainty.py": "d37649ba7f49a57222d95c4d7127c9caf281db0afda0ccdece27d9a7e9517a32",
-    "src/exposurerank/weighting.py": "8bf35944e03bb23b81f52e5aec27948fdbb84053a991857943ce4c25b4a3bd8c"
+    "src/exposurerank/simulation.py": "241c9a8c00abd98c9277ee1c0bbb5dd2607b9e70c1b52880e67a42cf1f15f889",
+    "src/exposurerank/training.py": "6ba27a3f2b66d6cf7383921cfbbe5f8d7c4d20b06b286e2e64554fb741f6032d",
+    "src/exposurerank/uncertainty.py": "1fb005ed03b678a3dff5903cba9296f7a80c10d8a8998a47e0609ac090b473ff",
+    "src/exposurerank/weighting.py": "c76ee3037d8ddefe53e92e4f741419c940dcb5274e5317471dc34abd18d2081d"
   },
-  "final_changes_after_rebuild": "Documentation, final evidence/status and release exclusion filter only; scientific source modules unchanged."
+  "public_figures": "source tables checked; PNG metadata bytes not required identical",
+  "log": "evidence/reproduction.log"
 }

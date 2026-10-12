@@ -1,0 +1,185 @@
+{
+  "status": "passed",
+  "review_revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
+  "fresh_clone_revision": "480e59d",
+  "scope": "scientific modules, SQL, static configs, pipeline/test entrypoints and dependency pins match fresh rebuild sources exactly; selected models and mask offsets are separately lock-validated",
+  "matching_source_files": [
+    {
+      "path": "configs/candidates.json",
+      "sha256": "2f16a95bd17fbee8325d0652e8646f657e8cf0e87f1c785024f7b795e0372920"
+    },
+    {
+      "path": "configs/experiments.json",
+      "sha256": "5e37c3e899f0a909335b5f711e11741257f4296072c750e24ad89b4383ba5bd8"
+    },
+    {
+      "path": "configs/labels.json",
+      "sha256": "a9a3c49585fdafe2240e4b6b61ae89aec3dacbdb4c9582fe94b0dbd3da57babb"
+    },
+    {
+      "path": "configs/masks.json",
+      "sha256": "f92da71aacd83aa20a82c06531a2c30a3be8c5ec641c82aeef4115141b054ef2"
+    },
+    {
+      "path": "configs/models.json",
+      "sha256": "c961b128697a622c66f956f0039290650df7fa19376d935c0107fe590bde895f"
+    },
+    {
+      "path": "configs/splits.json",
+      "sha256": "79d2a157a32bd0abfd45f6f4196f2dae695cbafc542c0ce277fb1b9749174af1"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "8ef47f4f5845c88a73cff1feff0fb06e63f7d9e16c4167f61fe04bc07f7b3fd6"
+    },
+    {
+      "path": "scripts/audit.py",
+      "sha256": "0505cf69cd9122cce957db1bdac8c871c3574ab15f77e6d8b91cfb99cc33e2ec"
+    },
+    {
+      "path": "scripts/evaluate.py",
+      "sha256": "90a805e0e5d566877342a132e39e60226edcdc3348144155fcf7f2be260e81ce"
+    },
+    {
+      "path": "scripts/freeze.py",
+      "sha256": "e7c8d20dc0d49689329fb808d13cd485d99156d09ab09537c017a53632891301"
+    },
+    {
+      "path": "scripts/leakage_audit.py",
+      "sha256": "4b44a5b4445839e14674a87a60708f67ad31980e77a36fe561e85344eaca21e5"
+    },
+    {
+      "path": "scripts/notebooks.py",
+      "sha256": "78aa66b5e7c6defff78032263dbd15c2f8d6eb8e8a5916e23013a8fcf0b0be8e"
+    },
+    {
+      "path": "scripts/prepare.py",
+      "sha256": "c64d52fa6b9c85fef1838feb915ddfe583e183e210bc5760f74235bc0cc7c075"
+    },
+    {
+      "path": "scripts/report.py",
+      "sha256": "43b0af9a7ca2586229eb302f3f9e1300ddca57bdc95353b9d9dab3191f163244"
+    },
+    {
+      "path": "scripts/run_all.py",
+      "sha256": "15ad68cb8671dab5092bdc71e6bcb3a3521047f50ac9350bccef53fa35d218d8"
+    },
+    {
+      "path": "scripts/simulate.py",
+      "sha256": "b2395ec0d3ffc004c6244df0a09cb3b342ba8dbee5e602d399e75441cfbee8be"
+    },
+    {
+      "path": "scripts/train.py",
+      "sha256": "d30beda0da57fa3fa98ee17a227763968ad2b05de81517b7b66237a28d90dbdf"
+    },
+    {
+      "path": "scripts/verify_tests.py",
+      "sha256": "95812d48cfd55263a41b83cefb5be7b4e0ae82abe5d45e87120b181f2e646a78"
+    },
+    {
+      "path": "sql/01_grain.sql",
+      "sha256": "cb83a8d6d7c774bee4689d02e9d7685872a159be8c5190d52b73ce45df79fe4d"
+    },
+    {
+      "path": "sql/02_duration_ratio.sql",
+      "sha256": "c3996809b9ee7ab176b8952273bb69c6854deb677a2624f311fbb7c73e7d276f"
+    },
+    {
+      "path": "sql/03_support.sql",
+      "sha256": "b9e7bb7e50fd3c1960dc3d39697ec7bd2d5ec21510f49307cad91ed8d2e41adf"
+    },
+    {
+      "path": "sql/04_timestamp.sql",
+      "sha256": "47de36688d05f51857c55227009cdbbd5e5cc3ff03c746d22e64b679965f7787"
+    },
+    {
+      "path": "sql/05_overlap.sql",
+      "sha256": "21c5d2c48c89b630cf4631dca8251656f345a889be28c51d429220ce61caa9b0"
+    },
+    {
+      "path": "sql/06_splits.sql",
+      "sha256": "1ae95b44162ecd17bf351b2413b860a8d48904fb8db3adb1a9bf8c5d86928007"
+    },
+    {
+      "path": "sql/07_catalogs.sql",
+      "sha256": "717674b2f1343c6bcf490c7ceb2a6b3672bf8ceb7ec21381272faf5d8447dc92"
+    },
+    {
+      "path": "sql/08_features.sql",
+      "sha256": "d0c4b7818aa86ff8dbead2b0e4d235e4ec3edce35fc8d25d2c23efb8701196da"
+    },
+    {
+      "path": "sql/09_training_aggregates.sql",
+      "sha256": "cb1bf82e33ee9cbb19249a1b426b3d203f93f212aa075f46b1444082a39ba43f"
+    },
+    {
+      "path": "src/exposurerank/__init__.py",
+      "sha256": "5e1359abc2267f828b776f1e305884be0981020cbacf2c776381361ded728e32"
+    },
+    {
+      "path": "src/exposurerank/baselines.py",
+      "sha256": "0521ccb063cb3153a46420f4408de6c567e17c740582cd9c01c5e33be83b182d"
+    },
+    {
+      "path": "src/exposurerank/candidates.py",
+      "sha256": "056f38b07b6d915774ef95191724f96faca20ef4e946aac9883263bcadbe245a"
+    },
+    {
+      "path": "src/exposurerank/data.py",
+      "sha256": "8ea847bf9c72cadd00395e86a656354a3ce3b48f75336bc2908241ef37066096"
+    },
+    {
+      "path": "src/exposurerank/evaluation.py",
+      "sha256": "4785aba1c0c6475d90dc8904428a86b1cb3e5799764b5854bb3531016272d3d5"
+    },
+    {
+      "path": "src/exposurerank/factorization.py",
+      "sha256": "fd70666c6a0b3e6300aaf72654daf06c5b33ea3a7d1211348d5c6910b6d46e00"
+    },
+    {
+      "path": "src/exposurerank/io.py",
+      "sha256": "e9fe30045f647c4f99bd36473731552a8c8e96ccb53b3b15bf73fdcfbf69e46c"
+    },
+    {
+      "path": "src/exposurerank/masks.py",
+      "sha256": "7b57ef78c5ae6edfa481ad3c460ba8d8ab6394302994abb3540ea8377a9067a0"
+    },
+    {
+      "path": "src/exposurerank/metrics.py",
+      "sha256": "334bc16aee4d38db336804f88d56a9356c3e180dc287465fabd595b6380fc036"
+    },
+    {
+      "path": "src/exposurerank/neural.py",
+      "sha256": "ec50b21018f3ff9c5c0389b736e4bc0f2fa97bf80e8744b27c44e518f80e8dba"
+    },
+    {
+      "path": "src/exposurerank/ranking.py",
+      "sha256": "e88e144191c3813b56c27395039595f472bb64745298b852212152d8665ffc30"
+    },
+    {
+      "path": "src/exposurerank/reporting.py",
+      "sha256": "e9b165fab885d5babffcc7b2e531d33577e7ca00d45160366109306e3b097398"
+    },
+    {
+      "path": "src/exposurerank/simulation.py",
+      "sha256": "241c9a8c00abd98c9277ee1c0bbb5dd2607b9e70c1b52880e67a42cf1f15f889"
+    },
+    {
+      "path": "src/exposurerank/training.py",
+      "sha256": "6ba27a3f2b66d6cf7383921cfbbe5f8d7c4d20b06b286e2e64554fb741f6032d"
+    },
+    {
+      "path": "src/exposurerank/uncertainty.py",
+      "sha256": "1fb005ed03b678a3dff5903cba9296f7a80c10d8a8998a47e0609ac090b473ff"
+    },
+    {
+      "path": "src/exposurerank/weighting.py",
+      "sha256": "c76ee3037d8ddefe53e92e4f741419c940dcb5274e5317471dc34abd18d2081d"
+    },
+    {
+      "path": "uv.lock",
+      "sha256": "de6454c69fa247a2fd3bf6bb3d4c95f6a249b149e8f50286eef993eb59fe8fee"
+    }
+  ],
+  "later_changes": "conformance/release scripts and documentation only; generated run provenance/timings may differ"
+}

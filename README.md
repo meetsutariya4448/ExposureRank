@@ -49,7 +49,7 @@ All13 mask conditions and6 candidate conditions executed200 shared draws each:3,
 
 See reports/tables/full_reference.csv, primary_contrasts.csv, the technical report, and [table/uncertainty dictionary](docs/table_dictionary.md). Every headline in the report is linked to actual tables by evidence/claim_ledger.json and audited by scripts/audit.py. Six scientific figures, two executed notebooks and40 interview questions are included.
 
-Measured original runs:16 learned fits totaled146.92 training seconds, with peak process RSS0.898GiB. Masks took351.93s and candidates486.20s; setup, source validation and clean rebuilding are separate. Direct cloud/API expense$0, excluding existing hardware/electricity/time. A full new-environment rebuild passed27 output comparisons in about17.5minutes. The final suite has33 passing tests,0 failures/errors/skips.
+Measured original runs:16 learned fits totaled146.92 training seconds, with peak process RSS0.898GiB. Masks took351.93s and candidates486.20s; setup, source validation and clean rebuilding are separate. Direct cloud/API expense$0, excluding existing hardware/electricity/time. The original rebuild record is retained in evidence/reproduction_v1.0.json. The blueprint-audit rebuild passed48 output comparisons in about18.4minutes, including19 private per-user/per-repetition contrast tensors. All16 freshly trained checkpoint state dictionaries also match exactly. The final suite has43 passing tests,0 failures/errors/skips.
 
 ## Reproduction
 
@@ -72,3 +72,5 @@ Stages can be run individually: prepare → pytest → train → freeze → comm
 Selected users/items, unknown original exposure mechanism, absent/blocked cells, missing clocks, heavy ratio tails, static warm holdout, finite seeds, empirical bootstrap and simulation-specific positivity all limit interpretation. Candidate tasks have different denominators;200 repetitions give imperfect MC precision. Negative/inconclusive findings are retained.
 
 License conflict: metadata CC BY4 versus embedded/repository CC BY-SA4 is unresolved. See DATA_NOTICE.md. Original code MIT; conservatively attributed dataset-derived aggregates/reports/figures CC BY-SA4. No raw logs, real maps/per-user metrics, scores, embeddings or checkpoints are redistributed. Public publishing requires a separate decision; no public URLs are claimed. The first four projects and master resume are unchanged.
+
+Blueprint review: [conformance audit](docs/blueprint_conformance_audit.md), [executed checks](evidence/blueprint_conformance.json), and updated local archive dist/ExposureRank_blueprint_verified.zip. The mandatory research core is complete; the aggregate interactive viewer remains the separate presentation step. Optional E10 OPE is skipped.

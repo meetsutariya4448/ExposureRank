@@ -43,7 +43,7 @@
       "max_q_eff": 500
     }
   ],
-  "seconds": 486.2026552090101,
+  "seconds": 499.9999426249997,
   "scores_sha256": "545d2ea9e24181238d432458b3b7e67f9826ecd37d165667059935d83830e9b8",
   "numpy": "2.5.4",
   "full_endpoint_repetitions": 1,

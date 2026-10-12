@@ -32,22 +32,22 @@
   "E6": {
     "status": "passed",
     "evidence": "Locked common test scores; full_reference.csv, primary_contrasts.csv and private score_manifest hashes",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "6815a917e49ff2279e95f1259eb2be7e21a5e8d8"
   },
   "E7": {
     "status": "passed",
     "evidence": "13 conditions \u00d7200 masks; observed-only linear HT, clipping/floor and coverage diagnostics; all scores fixed",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "480e59d77dd05722ec03562870cf4ab12ebd1a21"
   },
   "E8": {
     "status": "passed",
     "evidence": "Six candidate conditions \u00d7200 shared draws;5000-draw primary/bootstrap user sensitivity; MCSE/Wilson and seed tables",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "5ff5ee352e11b6dc74d42fd716540b6e67a82b9d"
   },
   "E9": {
     "status": "passed",
     "evidence": "Six candidate conditions \u00d7200 shared draws;5000-draw primary/bootstrap user sensitivity; MCSE/Wilson and seed tables",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "5ff5ee352e11b6dc74d42fd716540b6e67a82b9d"
   },
   "E10": {
     "status": "skipped (optional)",
@@ -56,7 +56,7 @@
   "E11": {
     "status": "passed",
     "evidence": "Six measured SVG/PNG figures, technical report/memo/cards, aggregate payload and claim ledger generated",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339"
   },
   "E12": {
     "status": "passed",

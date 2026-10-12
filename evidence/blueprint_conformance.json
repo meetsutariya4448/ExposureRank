@@ -1,0 +1,191 @@
+{
+  "core_status": "passed",
+  "source_revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
+  "checks": [
+    {
+      "requirement": "Exact observed pairs, labels, common warm eligibility, hash splits and no absent negatives",
+      "blueprint": "02,03,10",
+      "status": "passed",
+      "evidence": "complete compact-pair uniqueness/target/support checks; independently selected2000 hash assignments"
+    },
+    {
+      "requirement": "Pinned source integrity and conservative license scope",
+      "blueprint": "02,18",
+      "status": "passed",
+      "evidence": "archive SHA256 and publisher MD5 rerecomputed; source small SHA256; DATA_NOTICE and rights_register"
+    },
+    {
+      "requirement": "Three train-only baselines, exact12 configurations, three selected seeds, validation-only selection and reload",
+      "blueprint": "04,11",
+      "status": "passed",
+      "evidence": "all16 checkpoints rescored on full validation; ensemble probabilities and choices reproduced exactly; run_lineage.json"
+    },
+    {
+      "requirement": "Common held-out reference, exact paired5000-draw97.5% primary intervals and information boundaries",
+      "blueprint": "03,05,11",
+      "status": "passed",
+      "evidence": "primary intervals independently rerun; entire test-label perturbation/checkpoint/candidate invariance audit"
+    },
+    {
+      "requirement": "Registered validation-frozen Bernoulli probability laws and observed-only linear HT",
+      "blueprint": "06,11",
+      "status": "passed",
+      "evidence": "every density offset verified against independent bisection; exhaustive HT expectation/variance and access tests; frozen score/mask manifests"
+    },
+    {
+      "requirement": "Audit preserves original fitted results, raw repetition aggregates and draw streams",
+      "blueprint": "03\u201307,18",
+      "status": "passed",
+      "evidence": "six legacy result tables exact and all19 condition draw hashes unchanged"
+    },
+    {
+      "requirement": "Separate user/seed/MC layers, retained per-user/per-repetition evidence, and registered sensitivities",
+      "blueprint": "03\u201307,18",
+      "status": "passed",
+      "evidence": "19 private contrast tensors, explicit conditional MC mean bounds, discrepancy exclusion, predictive loss and seed summaries"
+    },
+    {
+      "requirement": "Reports, six scientific figures, two executed safe notebooks and interview/bullet evidence",
+      "blueprint": "12,15",
+      "status": "passed",
+      "evidence": "artifact existence and execution records; claim audit and public-payload privacy checks"
+    },
+    {
+      "requirement": "Clean locked-environment reconstruction and unchanged final scientific sources",
+      "blueprint": "11,18",
+      "status": "passed",
+      "evidence": "reproduction.json; exact16 checkpoint state tensors;44 scientific source/config/environment hashes match; exact scores/draw identities and numeric table comparisons"
+    },
+    {
+      "requirement": "Documented prefit protocol and pretest learned-artifact lock chronology",
+      "blueprint": "03,04,18",
+      "status": "passed",
+      "evidence": "Git ancestry b702ee0 \u219278305f3 \u21926547878; original lock remains hash-valid"
+    }
+  ],
+  "verified_checkpoint_runs": [
+    {
+      "family": "mf",
+      "dimension": 16,
+      "l2": 1e-05,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8706187499600501
+    },
+    {
+      "family": "mf",
+      "dimension": 16,
+      "l2": 0.0001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8699205313774663
+    },
+    {
+      "family": "mf",
+      "dimension": 16,
+      "l2": 0.001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8672344874047726
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8713644402307837
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8699205313774663
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 0.001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8672344874047726
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 29,
+      "checkpoint_ndcg10": 0.8705256590604502
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 43,
+      "checkpoint_ndcg10": 0.8693282153007039
+    },
+    {
+      "family": "neural",
+      "dimension": 16,
+      "l2": 1e-05,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.868357260113014
+    },
+    {
+      "family": "neural",
+      "dimension": 16,
+      "l2": 0.0001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8668601897783809
+    },
+    {
+      "family": "neural",
+      "dimension": 16,
+      "l2": 0.001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8629393033972775
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8677536827422027
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8692829651772134
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.001,
+      "seed": 17,
+      "checkpoint_ndcg10": 0.8622437675617703
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 29,
+      "checkpoint_ndcg10": 0.8667783435917081
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 43,
+      "checkpoint_ndcg10": 0.8666193195041695
+    }
+  ],
+  "optional_scope": {
+    "ope": "skipped by blueprint option",
+    "interactive_viewer": "not built; separate presentation authorization",
+    "forced_positive_candidates": "optional skipped",
+    "two_level_bootstrap": "optional skipped",
+    "mps_mlflow": "optional skipped"
+  },
+  "completion_scope": "mandatory core plus selected polish; does not claim every optional polished extension",
+  "all_original_headlines_and_draws_unchanged": true,
+  "executed_audit_script_sha256": "80c259201969a06f785b157d118648981eab993efd0ad89e0a7ddce7fa26b62d",
+  "blueprint_source_manifest_sha256": "bc3f78e57f0f9b1f9ede1a59073bd0cd358039e5d0c2b6e3608cd14961b2cd0a"
+}

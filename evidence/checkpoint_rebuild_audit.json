@@ -1,0 +1,166 @@
+{
+  "status": "passed",
+  "scope": "all16 freshly trained checkpoint state dictionaries; this does not by itself complete the simulation rebuild",
+  "runs": [
+    {
+      "family": "mf",
+      "dimension": 16,
+      "l2": 1e-05,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "1b1c1a7fc73ac2951004ea65779b7cbe763881a30dfa24ca5273308d27f59427",
+      "rebuilt_file_sha256": "1b1c1a7fc73ac2951004ea65779b7cbe763881a30dfa24ca5273308d27f59427"
+    },
+    {
+      "family": "mf",
+      "dimension": 16,
+      "l2": 0.0001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "5da88e3bd5eb1518d42810a0cc209d915771fe1a40fe9135df118935ce53cccd",
+      "rebuilt_file_sha256": "5da88e3bd5eb1518d42810a0cc209d915771fe1a40fe9135df118935ce53cccd"
+    },
+    {
+      "family": "mf",
+      "dimension": 16,
+      "l2": 0.001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "f04a205f72fd0d7ca6eb4b56fc4ae64475c43ab75d13570ace3f7606a25f86b7",
+      "rebuilt_file_sha256": "f04a205f72fd0d7ca6eb4b56fc4ae64475c43ab75d13570ace3f7606a25f86b7"
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "4b812bc0f871bc149ebaa1465ae0b2bfde98211088d1c65838e81dcd3e11f8f7",
+      "rebuilt_file_sha256": "4b812bc0f871bc149ebaa1465ae0b2bfde98211088d1c65838e81dcd3e11f8f7"
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "f922afeb03ed4adc04f9221249aae0da7ff732729c6687e32429bb0100970d31",
+      "rebuilt_file_sha256": "f922afeb03ed4adc04f9221249aae0da7ff732729c6687e32429bb0100970d31"
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 0.001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "3bf7d46fb3416c6ab16d98ab8515272f28582e7ab54022a1849293c08347e5de",
+      "rebuilt_file_sha256": "3bf7d46fb3416c6ab16d98ab8515272f28582e7ab54022a1849293c08347e5de"
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 29,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "8a7c97b55bbc8de4096f0271852d6742cd5dee39436614bb735a5c96a452fd37",
+      "rebuilt_file_sha256": "8a7c97b55bbc8de4096f0271852d6742cd5dee39436614bb735a5c96a452fd37"
+    },
+    {
+      "family": "mf",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 43,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "20f07e9ee2f75f9af8e39f891853b93f95bfe3b8f99e83c9572a45c811e6bc9e",
+      "rebuilt_file_sha256": "20f07e9ee2f75f9af8e39f891853b93f95bfe3b8f99e83c9572a45c811e6bc9e"
+    },
+    {
+      "family": "neural",
+      "dimension": 16,
+      "l2": 1e-05,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "e568c4587fc6e41f8fa3a288e4be49ee0294a0c96ac4bde1848d6f0f4f8e67d3",
+      "rebuilt_file_sha256": "e568c4587fc6e41f8fa3a288e4be49ee0294a0c96ac4bde1848d6f0f4f8e67d3"
+    },
+    {
+      "family": "neural",
+      "dimension": 16,
+      "l2": 0.0001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "8a2c1026bfd41dc0776988186d667d1aa5b6ee6a51eefc8253d33f738c1aa267",
+      "rebuilt_file_sha256": "8a2c1026bfd41dc0776988186d667d1aa5b6ee6a51eefc8253d33f738c1aa267"
+    },
+    {
+      "family": "neural",
+      "dimension": 16,
+      "l2": 0.001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "bc7f8d0c80fbee1559b0aa9ec6ce259bb5b08acbd34c1d52452d9e5dad93e6c5",
+      "rebuilt_file_sha256": "bc7f8d0c80fbee1559b0aa9ec6ce259bb5b08acbd34c1d52452d9e5dad93e6c5"
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 1e-05,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "3cce014c0453b068af68164a99e3e5d09571e8aac88e5624e9a99ae86791cf41",
+      "rebuilt_file_sha256": "3cce014c0453b068af68164a99e3e5d09571e8aac88e5624e9a99ae86791cf41"
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "6271d387c7a8699f01897dad939244454e89aa8db91f53c10bcd3defcfdd0dee",
+      "rebuilt_file_sha256": "6271d387c7a8699f01897dad939244454e89aa8db91f53c10bcd3defcfdd0dee"
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.001,
+      "seed": 17,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "dc07ebc1884ae35851dd5f004442b540d0fe2825cb738a901234079543b2c31c",
+      "rebuilt_file_sha256": "dc07ebc1884ae35851dd5f004442b540d0fe2825cb738a901234079543b2c31c"
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 29,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "4d7431c8755bdac1e42e46654228ffea70052a837cb9f11b520c02a95a00a6ed",
+      "rebuilt_file_sha256": "4d7431c8755bdac1e42e46654228ffea70052a837cb9f11b520c02a95a00a6ed"
+    },
+    {
+      "family": "neural",
+      "dimension": 32,
+      "l2": 0.0001,
+      "seed": 43,
+      "state_tensors": "all exactly equal",
+      "best_epoch_and_validation_metric": "exact",
+      "original_file_sha256": "6c1c730f390bdb928b97055fafeed671964b68660bd35c55374abc1ea7a9a636",
+      "rebuilt_file_sha256": "6c1c730f390bdb928b97055fafeed671964b68660bd35c55374abc1ea7a9a636"
+    }
+  ]
+}

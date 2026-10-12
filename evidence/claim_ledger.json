@@ -8,7 +8,7 @@
     "field": "ndcg10",
     "value": 0.3034025960193612,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -21,7 +21,7 @@
     "field": "recall10",
     "value": 0.0145207740848951,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -34,7 +34,7 @@
     "field": "recall20",
     "value": 0.0298296725516049,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -47,7 +47,7 @@
     "field": "catalog_coverage",
     "value": 0.0309588217613465,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -60,7 +60,7 @@
     "field": "ndcg10",
     "value": 0.8664610193020882,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -73,7 +73,7 @@
     "field": "recall10",
     "value": 0.0442934874379195,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -86,7 +86,7 @@
     "field": "recall20",
     "value": 0.0850540157711142,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -99,7 +99,7 @@
     "field": "catalog_coverage",
     "value": 0.0318605350165314,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -112,7 +112,7 @@
     "field": "ndcg10",
     "value": 0.8658319782684739,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -125,7 +125,7 @@
     "field": "recall10",
     "value": 0.0443536821276894,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -138,7 +138,7 @@
     "field": "recall20",
     "value": 0.084890210025493,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -151,7 +151,7 @@
     "field": "catalog_coverage",
     "value": 0.0318605350165314,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -164,7 +164,7 @@
     "field": "ndcg10",
     "value": 0.8674695381296799,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -177,7 +177,7 @@
     "field": "recall10",
     "value": 0.0444018499959394,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -190,7 +190,7 @@
     "field": "recall20",
     "value": 0.0850955948865926,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -203,7 +203,7 @@
     "field": "catalog_coverage",
     "value": 0.0450856627592425,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -216,7 +216,7 @@
     "field": "ndcg10",
     "value": 0.8659210878543806,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -229,7 +229,7 @@
     "field": "recall10",
     "value": 0.0442736282116983,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -242,7 +242,7 @@
     "field": "recall20",
     "value": 0.084806474123723,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -255,7 +255,7 @@
     "field": "catalog_coverage",
     "value": 0.0324616771866546,
     "unit": "fraction",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339",
     "data_manifest": "manifests/data.json",
     "evaluation_lock": "manifests/evaluation_lock.json"
   },
@@ -269,7 +269,7 @@
     "field": "gap",
     "value": 0.0010085188275915,
     "unit": "nDCG difference",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339"
   },
   {
     "id": "contrast0_lo",
@@ -281,7 +281,7 @@
     "field": "lo",
     "value": -0.0012744272781655,
     "unit": "nDCG difference",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339"
   },
   {
     "id": "contrast0_hi",
@@ -293,7 +293,7 @@
     "field": "hi",
     "value": 0.003338792464635,
     "unit": "nDCG difference",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339"
   },
   {
     "id": "contrast1_gap",
@@ -305,7 +305,7 @@
     "field": "gap",
     "value": -0.0015484502752992,
     "unit": "nDCG difference",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339"
   },
   {
     "id": "contrast1_lo",
@@ -317,7 +317,7 @@
     "field": "lo",
     "value": -0.0047290700918088,
     "unit": "nDCG difference",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339"
   },
   {
     "id": "contrast1_hi",
@@ -329,6 +329,6 @@
     "field": "hi",
     "value": 0.0016397966275978,
     "unit": "nDCG difference",
-    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+    "revision": "34b538b187ba202f9eb43614c3cec9f1eef77339"
   }
 ]
