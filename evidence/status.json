@@ -61,11 +61,11 @@
   "E12": {
     "status": "passed",
     "evidence": "Full fresh-environment training/simulation rebuild passed; tests, claims, two executed notebooks,40 interview questions and three honest bullet candidates",
-    "revision": "8cae7d885336600fb55470336721a5c5ec3969ef"
+    "revision": "3a6424e482e2af536f34f4b26d33a025acb92bc5"
   },
   "E13": {
     "status": "passed",
     "evidence": "Full fresh-environment training/simulation rebuild passed; tests, claims, two executed notebooks,40 interview questions and three honest bullet candidates",
-    "revision": "8cae7d885336600fb55470336721a5c5ec3969ef"
+    "revision": "3a6424e482e2af536f34f4b26d33a025acb92bc5"
   }
 }

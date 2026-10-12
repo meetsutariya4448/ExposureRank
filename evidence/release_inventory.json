@@ -1,5 +1,5 @@
 {
-  "source_revision": "8cae7d885336600fb55470336721a5c5ec3969ef",
+  "source_revision": "3a6424e482e2af536f34f4b26d33a025acb92bc5",
   "files": [
     {
       "path": ".gitignore",
@@ -18,8 +18,8 @@
     },
     {
       "path": "DELIVERABLES.md",
-      "bytes": 1284,
-      "sha256": "624c90b43c24edd8c7686abc7ccfda372cb14bda25db1ce82b41f281d16737dd"
+      "bytes": 1382,
+      "sha256": "017dee200e5b98805cda90505ca773f747ccf723c0e4125354666fc3c211a047"
     },
     {
       "path": "IMPLEMENTATION_STATUS.md",
@@ -33,8 +33,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5586,
-      "sha256": "12799df5d1bdb5632280602b0673444c45aa7c09754cdf38807bdd5e0dba4cde"
+      "bytes": 6611,
+      "sha256": "627d6ca7d63c8f7d1e37ec61914feb534b261dbaefa4b64ad806e2dcbc184b0f"
     },
     {
       "path": "configs/candidates.json",
@@ -289,7 +289,7 @@
     {
       "path": "evidence/status.json",
       "bytes": 3031,
-      "sha256": "8dd6ca0e0aa971b5427acd41c0189fbb287447d38eddc36a0c02b1e7fd5d631b"
+      "sha256": "5707d14cdf8d47aaab9693c36cf85c20558257ccd4dd6d7407d5f87182a690fa"
     },
     {
       "path": "evidence/test_log.txt",
