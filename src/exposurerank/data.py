@@ -24,6 +24,7 @@ def compact_map(raw,known):
     return idx.astype(np.int32)
 
 def acquire(source=None):
+    (ROOT/'data/raw').mkdir(parents=True,exist_ok=True)
     dest=ROOT/'data/raw/KuaiRec.zip'
     if not dest.exists():
         if source: shutil.copyfile(source,dest)
@@ -49,6 +50,8 @@ def acquire(source=None):
     write_json(ROOT/'manifests/archive.json',{'sha256':sha(dest),'bytes':dest.stat().st_size,'members':members})
 
 def prepare(source=None):
+    for rel in ('data/derived','artifacts/checkpoints','artifacts/scores','reports/tables','evidence','manifests'):
+        (ROOT/rel).mkdir(parents=True,exist_ok=True)
     start=time.perf_counter(); acquire(source)
     small=ROOT/'data/raw/small_matrix.csv'; assert sha(small)==SMALL_SHA
     con=duckdb.connect(); con.execute("SET memory_limit='4GB'");con.execute('SET threads=4')

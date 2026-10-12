@@ -26,6 +26,7 @@ files=sorted(files);inventory=[{'path':str(p.relative_to(ROOT)),'bytes':p.stat()
 write_json(ROOT/'evidence/release_inventory.json',{'source_revision':revision(),'files':inventory,'excluded':'all data/artifacts/environments, real user-level outputs, reproduction temp tree','publication':'local ZIP only'})
 files.append(ROOT/'evidence/release_inventory.json')
 archive=ROOT/'dist/ExposureRank_v1.0.zip'
+archive.parent.mkdir(parents=True,exist_ok=True)
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
     for p in files:z.write(p,'ExposureRank/'+str(p.relative_to(ROOT)))
 with zipfile.ZipFile(archive) as z:

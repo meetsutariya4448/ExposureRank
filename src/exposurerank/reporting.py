@@ -14,6 +14,7 @@ def emit(fig,name):
     fig.tight_layout();fig.savefig(ROOT/'reports/figures'/f'{name}.png',dpi=160);fig.savefig(ROOT/'reports/figures'/f'{name}.svg');plt.close(fig)
 
 def reports():
+    (ROOT/'reports/figures').mkdir(parents=True,exist_ok=True)
     full=table('full_reference');contrasts=table('primary_contrasts');mask=table('mask_results');cand=table('candidate_results');linear=table('linear_correction');mr=table('mask_reversals');cr=table('candidate_reversals');runs=read_json(ROOT/'evidence/runs.json')
     plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,'axes.grid':True,'grid.alpha':.2,'font.family':'DejaVu Sans'})
     fig,axes=plt.subplots(1,2,figsize=(10,4));split=read_json(ROOT/'manifests/split.json');axes[0].bar(['Train','Validation','Test'],split['counts'],color=['#477b9b','#dc974b','#4a9678']);axes[0].set_ylabel('Observed pairs');axes[0].set_title('Static hash split — observed cells only')
