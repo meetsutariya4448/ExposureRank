@@ -1,0 +1,14 @@
+{
+  "validation": {
+    "users": 1411,
+    "min_candidates": 581,
+    "max_candidates": 744,
+    "pairs": 934854
+  },
+  "test": {
+    "users": 1411,
+    "min_candidates": 595,
+    "max_candidates": 743,
+    "pairs": 935397
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "sha256": "c23f211cf109c7a060a25a4afe9e8c681b1ccbbc816cca921d87ad37dd11c70c",
+  "bytes": 431964858,
+  "members": [
+    {
+      "name": "KuaiRec 2.0/LICENSE",
+      "bytes": 20138,
+      "sha256": "187442db4df3afd21f2f0525739fd4beac28a62daaba3ee8d3533f60e7c33ec7",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/Statistics_KuaiRec.ipynb",
+      "bytes": 314195,
+      "sha256": "f0c91aa0dc6e412e171cb6dffc6f1d82e9b11780dcd72a08e8f8bb1a5c581895",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/data/big_matrix.csv",
+      "bytes": 1083521226,
+      "sha256": "4ee1a72ff9ce4e86ef50525da9dfd7aefcefa717b37c9d570010f689c42f4ef9",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/data/item_categories.csv",
+      "bytes": 113130,
+      "sha256": "b8b8330387cd69659ff6b35b9b69bb35303196a5264d5d7743e92ae8e19cd15e",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/data/item_daily_features.csv",
+      "bytes": 85855213,
+      "sha256": "45943d63c44652b6403f3a4f78c7225e1afe7916bab17d9a674d7979245e085b",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/data/kuairec_caption_category.csv",
+      "bytes": 1964578,
+      "sha256": "08f6ec40059c5a7ecdcebf615d080d9cf8f59f9497f6d66e8d5ccabdc7cab2d9",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/data/small_matrix.csv",
+      "bytes": 406155844,
+      "sha256": "6b601cd38b2600d8734b4aede309ad73d1e201fdc4bd76d4bc7d2534793d7d15",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/data/social_network.csv",
+      "bytes": 6910,
+      "sha256": "92a65bc4190778f737619167bf46d920d935e4666b93101c963647c35a80c6a6",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/data/user_features.csv",
+      "bytes": 744174,
+      "sha256": "c03ce5c6e90c50407b45585bde983db3079492346f7fa676d860777abfd783f4",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/figs/KuaiRec.png",
+      "bytes": 300178,
+      "sha256": "3aa41a96c1f4f5eb5282cda992718ca94d1f48c311a9ddf83a24c4f9420eed62",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/figs/colab-badge.svg",
+      "bytes": 2369,
+      "sha256": "a590b05e22690c59d120ad562fa6bd74f9e2e8e5f5a8c88381e1bebc99ad0f22",
+      "crc_verified": true
+    },
+    {
+      "name": "KuaiRec 2.0/loaddata.py",
+      "bytes": 1188,
+      "sha256": "c9c01274367cd718a5b458082d58d68c74e3b7a7bf6b4db9e4a58e3876308dc7",
+      "crc_verified": true
+    }
+  ]
+}

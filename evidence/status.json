@@ -1,0 +1,17 @@
+{
+  "E0": {
+    "status": "passed",
+    "evidence": "Protocol b702ee0; complete archive/SQL/split audits; manifests/data.json, split.json, catalogs.json",
+    "revision": "b702ee02ba950a35b4d72e34d734bedce4c4efa7"
+  },
+  "E1": {
+    "status": "passed",
+    "evidence": "Protocol b702ee0; complete archive/SQL/split audits; manifests/data.json, split.json, catalogs.json",
+    "revision": "b702ee02ba950a35b4d72e34d734bedce4c4efa7"
+  },
+  "E2": {
+    "status": "passed",
+    "evidence": "Protocol b702ee0; complete archive/SQL/split audits; manifests/data.json, split.json, catalogs.json",
+    "revision": "b702ee02ba950a35b4d72e34d734bedce4c4efa7"
+  }
+}

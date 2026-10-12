@@ -1,0 +1,13 @@
+{
+  "counts": [
+    2806319,
+    934854,
+    935397
+  ],
+  "users": 1411,
+  "items": 3327,
+  "min_train_user": 1905,
+  "min_train_item": 756,
+  "excluded_pairs": 0,
+  "pair_file_sha256": "1377c0ec7ebafd44ccce9b57e7cc7ca3168ce76ee30a1974222bb2c9e65beb28"
+}

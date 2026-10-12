@@ -1,0 +1,86 @@
+{
+  "01_grain": [
+    {
+      "rows": 4676570,
+      "unique_pairs": 4676570,
+      "users": 1411,
+      "items": 3327
+    }
+  ],
+  "02_duration_ratio": [
+    {
+      "invalid": 0,
+      "discrepancies": 228,
+      "binary_changes": 0,
+      "maximum_ratio": 571.5214280603849,
+      "ratio_gt100": 104
+    }
+  ],
+  "03_support": [
+    {
+      "min_user_support": 3295,
+      "min_item_support": 1315,
+      "missing_pairs": 17827
+    }
+  ],
+  "04_timestamp": [
+    {
+      "missing_timestamp": 181992,
+      "first_date": 20200705.0,
+      "last_date": 20200905.0
+    }
+  ],
+  "05_overlap": [
+    {
+      "pair_overlap": 0,
+      "exact_row_overlap": 0,
+      "big_unique_pairs": 10300969,
+      "big_rows": 12530806
+    }
+  ],
+  "06_splits": [
+    {
+      "split": 0,
+      "pairs": 2806319,
+      "unique_pairs": 2806319
+    },
+    {
+      "split": 1,
+      "pairs": 934854,
+      "unique_pairs": 934854
+    },
+    {
+      "split": 2,
+      "pairs": 935397,
+      "unique_pairs": 935397
+    }
+  ],
+  "07_catalogs": [
+    {
+      "split": 1,
+      "min_candidates": 581,
+      "max_candidates": 744,
+      "users": 1411
+    },
+    {
+      "split": 2,
+      "min_candidates": 595,
+      "max_candidates": 743,
+      "users": 1411
+    }
+  ],
+  "08_features": [
+    {
+      "reconciled_training_rows": 2806319.0,
+      "reconciled_training_positives": 909602.0,
+      "items": 3327
+    }
+  ],
+  "09_training_aggregates": [
+    {
+      "training_rows": 2806319,
+      "positive_rows": 909602.0,
+      "beta_prior": 0.3241264987148655
+    }
+  ]
+}
