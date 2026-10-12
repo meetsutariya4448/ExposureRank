@@ -1,0 +1,38 @@
+{
+  "fields": [
+    {
+      "column": "user_id",
+      "type": "BIGINT"
+    },
+    {
+      "column": "video_id",
+      "type": "BIGINT"
+    },
+    {
+      "column": "play_duration",
+      "type": "BIGINT"
+    },
+    {
+      "column": "video_duration",
+      "type": "BIGINT"
+    },
+    {
+      "column": "time",
+      "type": "TIMESTAMP"
+    },
+    {
+      "column": "date",
+      "type": "DOUBLE"
+    },
+    {
+      "column": "timestamp",
+      "type": "DOUBLE"
+    },
+    {
+      "column": "watch_ratio",
+      "type": "DOUBLE"
+    }
+  ],
+  "status": "eight-column source schema verified",
+  "source": "hash-pinned complete small_matrix.csv"
+}

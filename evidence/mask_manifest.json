@@ -1,0 +1,124 @@
+{
+  "conditions": [
+    {
+      "condition": "uniform|0.1|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "46b2f11eb188b3609949511795ebd543fe34a60b37ed51378aa06ff09d5ce1ce",
+      "nominal_density": 0.1,
+      "expected_test_density": 0.10000000000000003,
+      "epsilon": 0.02,
+      "offset": null
+    },
+    {
+      "condition": "uniform|0.25|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "03647395bce9d425eb0a579170d46aa030aa6e44b23eabadf685886aec9d90a4",
+      "nominal_density": 0.25,
+      "expected_test_density": 0.25,
+      "epsilon": 0.02,
+      "offset": null
+    },
+    {
+      "condition": "uniform|0.5|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "8cb5cbdce23928c35568406366c7cf3bf44b78b65ee4ebc434e73cfae6152de5",
+      "nominal_density": 0.5,
+      "expected_test_density": 0.5,
+      "epsilon": 0.02,
+      "offset": null
+    },
+    {
+      "condition": "popularity|0.1|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "eb07545d1d8cb9196fa9f557bdb0c672e69ef2c8ef8e0ec2764abe9d79a02c09",
+      "nominal_density": 0.1,
+      "expected_test_density": 0.10001662948442339,
+      "epsilon": 0.02,
+      "offset": -3.25721093744642
+    },
+    {
+      "condition": "popularity|0.25|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "47b9e3d30979a95292eee82a29a1841631378266c620c0e14324a0a11634aa06",
+      "nominal_density": 0.25,
+      "expected_test_density": 0.25002789352608734,
+      "epsilon": 0.02,
+      "offset": -1.844535609295546
+    },
+    {
+      "condition": "popularity|0.5|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "56dab73427a596009127ca769d207841e4d72457b00d91fe0447c62f45968668",
+      "nominal_density": 0.5,
+      "expected_test_density": 0.500010031317399,
+      "epsilon": 0.02,
+      "offset": -0.3173580972120004
+    },
+    {
+      "condition": "outcome|0.1|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "f4e5104a13a6dd261e264ba7e756b6e4f343d9bd24a466ed7a570eaf9ec0a075",
+      "nominal_density": 0.1,
+      "expected_test_density": 0.09973336011171341,
+      "epsilon": 0.02,
+      "offset": -3.1272457838053223
+    },
+    {
+      "condition": "outcome|0.25|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "29ef44df8d12cf84643117c958aafe7490dad723ec930e2f21db49b433ef75f6",
+      "nominal_density": 0.25,
+      "expected_test_density": 0.24929605424404144,
+      "epsilon": 0.02,
+      "offset": -1.3120930790905811
+    },
+    {
+      "condition": "outcome|0.5|floor0.02",
+      "repetitions": 200,
+      "mask_sha256": "69f2e5c0e4de1700ac3467a7ee7f34fdb1b513fa8aeb9660ca0ae1bbe14c7da6",
+      "nominal_density": 0.5,
+      "expected_test_density": 0.4992474913597107,
+      "epsilon": 0.02,
+      "offset": 1.0627611118711102
+    },
+    {
+      "condition": "popularity|0.25|floor0.1",
+      "repetitions": 200,
+      "mask_sha256": "b0e1792355ee9b817f16aeb2a1ccbea2dfb007e98125ddcf761556dda64e4c6a",
+      "nominal_density": 0.25,
+      "expected_test_density": 0.2500220158607422,
+      "epsilon": 0.1,
+      "offset": -2.215825177338454
+    },
+    {
+      "condition": "popularity|0.5|floor0.1",
+      "repetitions": 200,
+      "mask_sha256": "c89422718fe2a93a122bc1a919688404ba75ebcb3b0764262a5c8a3bcd2f08e8",
+      "nominal_density": 0.5,
+      "expected_test_density": 0.5000083594311658,
+      "epsilon": 0.1,
+      "offset": -0.31735809721199965
+    },
+    {
+      "condition": "outcome|0.25|floor0.1",
+      "repetitions": 200,
+      "mask_sha256": "983c2aa73db9146797a110aa1faa7dd49feff1445557881f777bc83148ad9649",
+      "nominal_density": 0.25,
+      "expected_test_density": 0.24952124059200287,
+      "epsilon": 0.1,
+      "offset": -1.8592332005498156
+    },
+    {
+      "condition": "outcome|0.5|floor0.1",
+      "repetitions": 200,
+      "mask_sha256": "60cfe1c9dd1d0026e2ccaefbfbcce1d82119bca8e7c0e085d77cf4783858d583",
+      "nominal_density": 0.5,
+      "expected_test_density": 0.4993728697299957,
+      "epsilon": 0.1,
+      "offset": 1.0627603283759848
+    }
+  ],
+  "seconds": 351.9323770829942,
+  "scores_sha256": "545d2ea9e24181238d432458b3b7e67f9826ecd37d165667059935d83830e9b8",
+  "design": "independent Bernoulli cells; shared mask across five models; simulator truth never passed to HT"
+}

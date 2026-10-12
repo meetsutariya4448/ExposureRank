@@ -73,6 +73,29 @@ def test_penalty_excludes_global_intercept():
     with torch.no_grad(): model.mu+=100
     assert model.penalty().item()==p
 
+def test_bce_logit_and_derivative_by_hand():
+    model=MatrixFactorization(1,1,16,.5)
+    with torch.no_grad():
+        for parameter in model.parameters():parameter.zero_()
+        model.mu.fill_(1)
+    loss=torch.nn.functional.binary_cross_entropy_with_logits(model(torch.tensor([0]),torch.tensor([0])),torch.tensor([1.]))
+    loss.backward()
+    assert loss.item()==pytest.approx(np.log1p(np.exp(-1)),abs=1e-7)
+    assert model.mu.grad.item()==pytest.approx(1/(1+np.exp(-1))-1,abs=1e-7)
+
 def test_linear_dcg_matches_metric():
     f,c,o=toy();y=c.outcomes(f['y']);a=linear_coefficients(o,c.valid)
     assert (a*y).sum()==pytest.approx(metrics(y,y,o,c.valid)['dcg10'].mean())
+
+def test_recall20_does_not_retrieve_positive_at_rank21():
+    y=np.r_[np.zeros(20),1.][None,:];order=np.arange(21)[None,:]
+    m=metrics(y,y,order,np.ones_like(y,dtype=bool))
+    assert m['recall10'][0]==m['recall20'][0]==m['ndcg10'][0]==0
+
+def test_variable_catalog_padding_never_becomes_feedback():
+    f={'u':np.array([0,0,0,1,1]),'i':np.array([0,1,2,0,2]),'y':np.array([1.,0,1,0,1]),'r':np.array([.2,.4,.6,.8,1.])}
+    c=Catalog.build(f,tie_keys(np.arange(3)),2);o=c.order(np.array([3.,2,1,2,1]))
+    m=metrics(c.outcomes(f['y']),c.outcomes(f['r']),o,c.valid)
+    assert m['reward10'][0]==pytest.approx(.4) and m['reward10'][1]==pytest.approx(.9)
+    assert np.all(m['recall10']==1) and c.valid.sum()==5
+    a=linear_coefficients(o,c.valid,reward=True);assert (a*c.outcomes(f['r'])).sum()==pytest.approx(.65)

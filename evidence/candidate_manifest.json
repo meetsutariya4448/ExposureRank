@@ -1,0 +1,52 @@
+{
+  "conditions": [
+    {
+      "condition": "uniform|q50",
+      "repetitions": 200,
+      "candidate_sha256": "0077e445e7c17569a15c26c17115b01426646ad86270efaa0009ee277125ab1c",
+      "min_q_eff": 50,
+      "max_q_eff": 50
+    },
+    {
+      "condition": "uniform|q100",
+      "repetitions": 200,
+      "candidate_sha256": "fd950720929d679041bdae0e16b1480f7bf75b041a307bf5b235a8eeea06022c",
+      "min_q_eff": 100,
+      "max_q_eff": 100
+    },
+    {
+      "condition": "uniform|q500",
+      "repetitions": 200,
+      "candidate_sha256": "1c967ef3512e6453a482034232eb9c2b33142461ae085e3bb1d06a26167d9079",
+      "min_q_eff": 500,
+      "max_q_eff": 500
+    },
+    {
+      "condition": "popularity|q50",
+      "repetitions": 200,
+      "candidate_sha256": "f186888e96c3779f946e69c2ed89a2facc4e7edd39d84fdc03837e997c62fbcf",
+      "min_q_eff": 50,
+      "max_q_eff": 50
+    },
+    {
+      "condition": "popularity|q100",
+      "repetitions": 200,
+      "candidate_sha256": "054a4d9fe0cf3f504266438a12ccb3ab1f428d5830ab5bca320a2d5be9621931",
+      "min_q_eff": 100,
+      "max_q_eff": 100
+    },
+    {
+      "condition": "popularity|q500",
+      "repetitions": 200,
+      "candidate_sha256": "491d67270010a8383bcbf472056a8a37bb127e1e2f03368e1f0e4f3f235c52eb",
+      "min_q_eff": 500,
+      "max_q_eff": 500
+    }
+  ],
+  "seconds": 486.2026552090101,
+  "scores_sha256": "545d2ea9e24181238d432458b3b7e67f9826ecd37d165667059935d83830e9b8",
+  "numpy": "2.5.4",
+  "full_endpoint_repetitions": 1,
+  "full_endpoint_exact": true,
+  "law": "Generator.choice without replacement; normalized weights are not marginal inclusion probabilities"
+}

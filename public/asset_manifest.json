@@ -1,0 +1,5 @@
+{
+  "aggregate_payload_sha256": "aba1f38f2d78af948925b3cd0507e1b387443437f929bd7a4d38ef69408b41b1",
+  "code_revision": "65478781b6a48fede34a48f14a6f44846b1492e0",
+  "rows_only": "model/condition aggregates; no individual IDs/maps/scores"
+}

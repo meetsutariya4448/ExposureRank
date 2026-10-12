@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "perturbed_test_labels": 935397,
+  "training_summaries_unchanged": true,
+  "shared_catalogs_unchanged": true,
+  "six_checkpoint_scores_exactly_unchanged": true,
+  "two_candidate_sampler_draws_unchanged": true,
+  "fitted_checkpoints": "fixed and private; training receives train/validation arguments only"
+}

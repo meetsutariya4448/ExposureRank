@@ -1,0 +1,5 @@
+
+
+Historical2020 static observed-cell benchmark; no future session, satisfaction, causal engagement, real historical propensities or production lift. Data selection/blocked missing cells and shared items limit generalization. Three seeds are a small fitting sensitivity, not a complete training uncertainty distribution. Macro top10 preferences concentrate on a small item set. Coverage of recommended items and statistical intervals are different quantities. Numerical watch-ratio discrepancies have unknown cause; recomputed/capped/threshold sensitivities are reported without test-driven target changes.
+
+KuaiRec authors, https://kuairec.com/, CIKM2022, DOI10.5281/zenodo.18164998. Metadata CC BY versus embedded CC BY-SA conflict is unresolved. Conservatively attribute dataset-derived reports/tables/figures under CC BY-SA4.0, indicate transformations, and exclude raw logs, maps, per-user metrics, scores, embeddings and checkpoints. Original code MIT. This is local preparation; no public publication or rights clearance for model redistribution.

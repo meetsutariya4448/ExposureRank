@@ -28,5 +28,34 @@
     "status": "passed",
     "evidence": "neural: six configs and selected seeds17/29/43 actually trained; evidence/runs.json",
     "revision": "78305f378d2f632b386d8364b1a710a146493163"
+  },
+  "E6": {
+    "status": "passed",
+    "evidence": "Locked common test scores; full_reference.csv, primary_contrasts.csv and private score_manifest hashes",
+    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+  },
+  "E7": {
+    "status": "passed",
+    "evidence": "13 conditions \u00d7200 masks; observed-only linear HT, clipping/floor and coverage diagnostics; all scores fixed",
+    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+  },
+  "E8": {
+    "status": "passed",
+    "evidence": "Six candidate conditions \u00d7200 shared draws;5000-draw primary/bootstrap user sensitivity; MCSE/Wilson and seed tables",
+    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+  },
+  "E9": {
+    "status": "passed",
+    "evidence": "Six candidate conditions \u00d7200 shared draws;5000-draw primary/bootstrap user sensitivity; MCSE/Wilson and seed tables",
+    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
+  },
+  "E10": {
+    "status": "skipped (optional)",
+    "evidence": "docs/ope_skip.md"
+  },
+  "E11": {
+    "status": "passed",
+    "evidence": "Six measured SVG/PNG figures, technical report/memo/cards, aggregate payload and claim ledger generated",
+    "revision": "65478781b6a48fede34a48f14a6f44846b1492e0"
   }
 }

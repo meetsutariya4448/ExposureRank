@@ -1,0 +1,13 @@
+condition,a,b,scope,gap,lo,hi,users,draws,level
+uniform|q50,mf,item,paired users on mean-over-candidate-draw differences,0.001642481761511148,0.0009574477047053762,0.002332876397614244,1411,5000,0.95
+uniform|q50,neural,mf,paired users on mean-over-candidate-draw differences,-0.002156996193358222,-0.002861313748911294,-0.0014792204158372692,1411,5000,0.95
+uniform|q100,mf,item,paired users on mean-over-candidate-draw differences,0.0014067218187524195,0.0005423325177600311,0.0022588971945458848,1411,5000,0.95
+uniform|q100,neural,mf,paired users on mean-over-candidate-draw differences,-0.002230897496945967,-0.003166446778043216,-0.0012693673290075853,1411,5000,0.95
+uniform|q500,mf,item,paired users on mean-over-candidate-draw differences,0.000982768415704271,-0.00048576768048714316,0.002434934728806575,1411,5000,0.95
+uniform|q500,neural,mf,paired users on mean-over-candidate-draw differences,-0.0016175592281162355,-0.003744007641460611,0.0006410979708406922,1411,5000,0.95
+popularity|q50,mf,item,paired users on mean-over-candidate-draw differences,0.0012205666426697765,0.0004471955593913684,0.001976769442646484,1411,5000,0.95
+popularity|q50,neural,mf,paired users on mean-over-candidate-draw differences,-0.0020366363976005017,-0.0028544306456250333,-0.0011743745256215564,1411,5000,0.95
+popularity|q100,mf,item,paired users on mean-over-candidate-draw differences,0.0008315332633133874,-4.571690922228332e-05,0.0016953273833549586,1411,5000,0.95
+popularity|q100,neural,mf,paired users on mean-over-candidate-draw differences,-0.002161979866623631,-0.003232071872096243,-0.001068210910782676,1411,5000,0.95
+popularity|q500,mf,item,paired users on mean-over-candidate-draw differences,0.0008766130411788756,-0.001082677794979319,0.002836828339771552,1411,5000,0.95
+popularity|q500,neural,mf,paired users on mean-over-candidate-draw differences,-0.0013881816965710852,-0.004151319787024237,0.0013267511927950967,1411,5000,0.95

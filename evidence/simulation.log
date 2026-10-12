@@ -1,0 +1,19 @@
+Masks complete: uniform|0.1|floor0.02 expected density 0.1
+Masks complete: uniform|0.25|floor0.02 expected density 0.25
+Masks complete: uniform|0.5|floor0.02 expected density 0.5
+Masks complete: popularity|0.1|floor0.02 expected density 0.1
+Masks complete: popularity|0.25|floor0.02 expected density 0.25
+Masks complete: popularity|0.5|floor0.02 expected density 0.5
+Masks complete: outcome|0.1|floor0.02 expected density 0.0997
+Masks complete: outcome|0.25|floor0.02 expected density 0.2493
+Masks complete: outcome|0.5|floor0.02 expected density 0.4992
+Masks complete: popularity|0.25|floor0.1 expected density 0.25
+Masks complete: popularity|0.5|floor0.1 expected density 0.5
+Masks complete: outcome|0.25|floor0.1 expected density 0.2495
+Masks complete: outcome|0.5|floor0.1 expected density 0.4994
+Candidates complete: uniform|q50
+Candidates complete: uniform|q100
+Candidates complete: uniform|q500
+Candidates complete: popularity|q50
+Candidates complete: popularity|q100
+Candidates complete: popularity|q500
