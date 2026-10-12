@@ -7,7 +7,7 @@ from exposurerank.io import ROOT,write_json,read_json,revision
 
 p=argparse.ArgumentParser();p.add_argument('--destination',required=True);args=p.parse_args();dest=Path(args.destination)
 if dest.exists():raise SystemExit('Reproduction destination must be new; never overwrite existing work')
-start=time.perf_counter();subprocess.run(['git','clone','--local',str(ROOT),str(dest)],check=True)
+start=time.perf_counter();source_revision=revision();subprocess.run(['git','clone','--local',str(ROOT),str(dest)],check=True)
 with (ROOT/'evidence/reproduction.log').open('w') as log:
     def run(command):
         log.write('\nCOMMAND '+repr(command)+'\n');log.flush();subprocess.run(command,cwd=dest,stdout=log,stderr=subprocess.STDOUT,check=True)
@@ -50,5 +50,5 @@ for name in ('mask_reversals.csv','candidate_reversals.csv'):
     a=pd.read_csv(ROOT/'reports/tables'/name);b=pd.read_csv(dest/'reports/tables'/name)
     assert a[['state','reversals']].equals(b[['state','reversals']])
 from exposurerank.io import sha
-write_json(ROOT/'evidence/reproduction.json',{'status':'passed','source_revision':revision(),'fresh_environment':True,'complete_training_and_simulation_rebuilt':True,'seconds':time.perf_counter()-start,'compared_outputs':comparisons,'selection_and_reversal_categories_exact':True,'all_private_score_arrays_exact':True,'statistical_source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in sorted((ROOT/'src').rglob('*.py'))},'public_figures':'source tables checked; PNG metadata bytes not required identical','log':'evidence/reproduction.log'})
+write_json(ROOT/'evidence/reproduction.json',{'status':'passed','source_revision':source_revision,'fresh_environment':True,'complete_training_and_simulation_rebuilt':True,'seconds':time.perf_counter()-start,'compared_outputs':comparisons,'selection_and_reversal_categories_exact':True,'all_private_score_arrays_exact':True,'statistical_source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in sorted((ROOT/'src').rglob('*.py'))},'public_figures':'source tables checked; PNG metadata bytes not required identical','log':'evidence/reproduction.log'})
 print('Complete fresh-environment reconstruction passed:',len(comparisons),'outputs checked')
