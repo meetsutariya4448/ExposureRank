@@ -35,7 +35,21 @@ flowchart LR
 
 ## Results
 
-See full_reference.csv and primary_contrasts.csv in reports/tables. The registered learned-versus-baseline and neural-versus-MF intervals include zero. Do not claim learned-model superiority or equivalence. Condition-specific reversals and matching-target correction errors are in the mask/candidate/linear tables and six standalone figures. Every headline in the report is linked to actual tables by evidence/claim_ledger.json and audited by scripts/audit.py.
+| Model | Test macro nDCG@10 |
+|---|---:|
+| global | 0.303403 |
+| item | 0.866461 |
+| bias | 0.865832 |
+| mf | 0.867470 |
+| neural | 0.865921 |
+
+MF minus item: 0.001009; paired97.5% interval [-0.001274, 0.003339]. The neural-minus-MF interval also includes zero. This is inconclusive evidence, not equivalence or online uplift.
+
+All13 mask conditions and6 candidate conditions executed200 shared draws each:3,800 nonfull draws. MF/item ordering reversals under the nine primary naive-mask conditions ranged11%–54%; the full-reference gap is only just above the registered.001 near-tie cutoff. Candidate rates are separate changed-task results. HT corrects matching linear rewards, not arbitrary normalized nDCG.
+
+See reports/tables/full_reference.csv, primary_contrasts.csv, the technical report, and [table/uncertainty dictionary](docs/table_dictionary.md). Every headline in the report is linked to actual tables by evidence/claim_ledger.json and audited by scripts/audit.py. Six scientific figures, two executed notebooks and40 interview questions are included.
+
+Measured original runs:16 learned fits totaled146.92 training seconds, with peak process RSS0.898GiB. Masks took351.93s and candidates486.20s; setup, source validation and clean rebuilding are separate. Direct cloud/API expense$0, excluding existing hardware/electricity/time. A full new-environment rebuild passed27 output comparisons in about17.5minutes. The final suite has33 passing tests,0 failures/errors/skips.
 
 ## Reproduction
 

@@ -16,7 +16,7 @@ Local implementation only. No public publishing, paid cloud, other-project edits
 | E9 | passed | Six candidate conditions ×200 shared draws;5000-draw primary/bootstrap user sensitivity; MCSE/Wilson and seed tables |
 | E10 | skipped (optional) | docs/ope_skip.md |
 | E11 | passed | Six measured SVG/PNG figures, technical report/memo/cards, aggregate payload and claim ledger generated |
-| E12 | not started |  |
-| E13 | not started |  |
+| E12 | passed | Full fresh-environment training/simulation rebuild passed; tests, claims, two executed notebooks,40 interview questions and three honest bullet candidates |
+| E13 | passed | Full fresh-environment training/simulation rebuild passed; tests, claims, two executed notebooks,40 interview questions and three honest bullet candidates |
 
 See evidence/status.json for actual source revisions and stage logs for failures/runtimes.

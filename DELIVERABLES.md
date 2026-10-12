@@ -11,3 +11,5 @@
 - Private local artifacts: data/raw and data/derived; artifacts/checkpoints, scores. These are excluded from Git and the local public-preparation ZIP.
 
 Review IMPLEMENTATION_STATUS.md for actual completion. Optional OPE is explicitly skipped. No public deployment, GitHub push or actual resume edit is included.
+
+Table definitions: docs/table_dictionary.md. Rights/execution register: docs/rights_register.md.
