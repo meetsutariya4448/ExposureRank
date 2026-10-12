@@ -13,3 +13,5 @@
 Review IMPLEMENTATION_STATUS.md for actual completion. Optional OPE is explicitly skipped. No public deployment, GitHub push or actual resume edit is included.
 
 Table definitions: docs/table_dictionary.md. Rights/execution register: docs/rights_register.md.
+
+Blueprint review: docs/blueprint_conformance_audit.md and evidence/blueprint_conformance.json. The updated local archive is dist/ExposureRank_blueprint_verified.zip; the original v1.0 ZIP/tag are preserved. The interactive viewer remains a separate presentation step.

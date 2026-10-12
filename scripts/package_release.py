@@ -1,7 +1,13 @@
 """Rights-aware, local-only release inventory; raw and learned assets excluded."""
-import json,subprocess,zipfile,hashlib
+import argparse,json,subprocess,zipfile,hashlib
 from pathlib import Path
 from exposurerank.io import ROOT,read_json,write_json,sha,revision,status
+
+parser=argparse.ArgumentParser()
+parser.add_argument('--name',default='ExposureRank_v1.0.zip')
+args=parser.parse_args()
+if Path(args.name).name!=args.name or not args.name.endswith('.zip') or '..' in args.name:
+    parser.error('--name must be a plain ZIP filename')
 
 assert read_json(ROOT/'evidence/reproduction.json')['status']=='passed'
 assert read_json(ROOT/'evidence/claim_audit.json')['status']=='passed'
@@ -25,11 +31,11 @@ for p in ROOT.rglob('*'):
 files=sorted(files);inventory=[{'path':str(p.relative_to(ROOT)),'bytes':p.stat().st_size,'sha256':sha(p)} for p in files]
 write_json(ROOT/'evidence/release_inventory.json',{'source_revision':revision(),'files':inventory,'excluded':'all data/artifacts/environments, real user-level outputs, reproduction temp tree','publication':'local ZIP only'})
 files.append(ROOT/'evidence/release_inventory.json')
-archive=ROOT/'dist/ExposureRank_v1.0.zip'
+archive=ROOT/'dist'/args.name
 archive.parent.mkdir(parents=True,exist_ok=True)
 with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED) as z:
     for p in files:z.write(p,'ExposureRank/'+str(p.relative_to(ROOT)))
 with zipfile.ZipFile(archive) as z:
     assert not any('/data/' in n or '/artifacts/' in n or n.endswith(('.pt','.npz','.parquet')) for n in z.namelist());assert z.testzip() is None
-(ROOT/'dist/SHA256SUMS.txt').write_text(sha(archive)+'  ExposureRank_v1.0.zip\n')
+(ROOT/'dist/SHA256SUMS.txt').write_text(''.join(sha(p)+'  '+p.name+'\n' for p in sorted((ROOT/'dist').glob('*.zip'))))
 print('Local release:',len(files),'files',archive.stat().st_size,'bytes; private assets excluded')
