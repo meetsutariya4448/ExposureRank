@@ -99,8 +99,8 @@ passed('Registered validation-frozen Bernoulli probability laws and observed-onl
 
 original=ROOT/'evidence/rebuild/original_tables'
 for name in ('full_reference.csv','primary_contrasts.csv','seed_sensitivity.csv','mask_repetitions.csv','candidate_repetitions.csv','linear_repetitions.csv'):
-    if (original/name).exists():
-        a=pd.read_csv(original/name);b=pd.read_csv(ROOT/'reports/tables'/name);assert a.equals(b),name
+    assert (original/name).exists(),name
+    a=pd.read_csv(original/name);b=pd.read_csv(ROOT/'reports/tables'/name);assert a.equals(b),name
 for filename,key in [('mask_manifest.json','mask_sha256'),('candidate_manifest.json','candidate_sha256')]:
     a=read_json(ROOT/'evidence/rebuild'/('original_'+filename))['conditions'];b=read_json(ROOT/'evidence'/filename)['conditions']
     assert [x[key] for x in a]==[x[key] for x in b]

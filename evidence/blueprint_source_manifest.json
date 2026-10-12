@@ -1,0 +1,109 @@
+{
+  "scope": "19 original planning documents reviewed for conformance; this is a source-integrity record, not an implementation result",
+  "documents": [
+    {
+      "name": "01_project_charter.md",
+      "sha256": "77debf7ca292ba6bf89ed6970caaef58783ac09937e27b5662a424e3f7725f73",
+      "bytes": 5588
+    },
+    {
+      "name": "02_dataset_and_licensing_audit.md",
+      "sha256": "3cf6d5c7fb273f91e8e4342dff36e97ba277c65ee46fb11e35f411389dc8be95",
+      "bytes": 7269
+    },
+    {
+      "name": "03_label_and_evaluation_contract.md",
+      "sha256": "7637a9ff5762a90f35d1d9a5b116afed45f3e45340f0c19e99921c2965674d8c",
+      "bytes": 6469
+    },
+    {
+      "name": "04_recommendation_model_design.md",
+      "sha256": "ea83c360b14c87114c7aa77b2d83bcf4495d4b2bcf95a64b9cdab58f708e9df4",
+      "bytes": 5807
+    },
+    {
+      "name": "05_ranking_metrics_and_statistical_inference.md",
+      "sha256": "c14986638bacdc38febd1d42868be22d57247457ad3f8bf7e5266253ef12ced6",
+      "bytes": 6412
+    },
+    {
+      "name": "06_observation_bias_experiment.md",
+      "sha256": "ec03c0100d97ef9f9ffe30e251b99d4139ac0d0b7b83a7018fe22a4f55169731",
+      "bytes": 6153
+    },
+    {
+      "name": "07_candidate_sampling_experiment.md",
+      "sha256": "404710910ab281c69e3768a6c62f8c17cc2719f25a99ef7cae5feb09afe0950c",
+      "bytes": 4475
+    },
+    {
+      "name": "08_optional_off_policy_evaluation.md",
+      "sha256": "3eb7349460ead498aa128eafc12fdb3df57277672b85a0e4cfe44e55df06fa68",
+      "bytes": 4035
+    },
+    {
+      "name": "09_technical_architecture.md",
+      "sha256": "c7204f43859df788ae632c8117d2974c2c0c5b6ebbe444d41108b8b93edfb5a4",
+      "bytes": 5434
+    },
+    {
+      "name": "10_data_quality_and_leakage.md",
+      "sha256": "f83deda51589437b94e5b4e80812acd03445e299b442b64ab35194f8bdd1546e",
+      "bytes": 4608
+    },
+    {
+      "name": "11_testing_and_reproducibility.md",
+      "sha256": "c99ca9beb2c8b0710b8f10a8a6f4a5eef01cb8df5cd327462dded8e9b83a8579",
+      "bytes": 5506
+    },
+    {
+      "name": "12_visualization_and_portfolio.md",
+      "sha256": "60ad7fc68da5b9153038e405aa16e724d685172fda7f1ff991dc4f5c7bf4f36b",
+      "bytes": 4181
+    },
+    {
+      "name": "13_originality_and_research_positioning.md",
+      "sha256": "cf7bbe2dc9cef5b097b039c592cd311e565dfcc71f892be468264ce54938a8fd",
+      "bytes": 3964
+    },
+    {
+      "name": "14_implementation_milestones.md",
+      "sha256": "60c945f6eacb768ca104f7e72a03961f10bd6715c726bbd13ea7b9dabd14f979",
+      "bytes": 19489
+    },
+    {
+      "name": "15_resume_and_interview_strategy.md",
+      "sha256": "b053c4e1f173c641d0255ebfea9d566eab6fac9e3086d1676679a235b9a3cc81",
+      "bytes": 14890
+    },
+    {
+      "name": "16_cost_and_compute_plan.md",
+      "sha256": "cf7f564088d5b9c312c5d221a017700fcfa17176a59eec6411d4621b1fd50aed",
+      "bytes": 5176
+    },
+    {
+      "name": "17_do_and_do_not_checklist.md",
+      "sha256": "5f682daba486b23e4c6b2c300e214a7c45de6bd52f93d76b4e6324f8088131d4",
+      "bytes": 4642
+    },
+    {
+      "name": "18_final_build_specification.md",
+      "sha256": "3e008c7bfcbf3eef629a34bbe9b326188fa2f917037c4956600e8c99318449d6",
+      "bytes": 9444
+    },
+    {
+      "name": "19_sources_and_assumptions.md",
+      "sha256": "21cc768590299142c55287b3478a4982379560361a94755f1941ca1d2faaf883",
+      "bytes": 7637
+    }
+  ],
+  "controlling_specification": "18_final_build_specification.md",
+  "method_contracts": [
+    "03_label_and_evaluation_contract.md",
+    "04_recommendation_model_design.md",
+    "05_ranking_metrics_and_statistical_inference.md",
+    "06_observation_bias_experiment.md",
+    "07_candidate_sampling_experiment.md",
+    "11_testing_and_reproducibility.md"
+  ]
+}
