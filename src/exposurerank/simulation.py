@@ -6,7 +6,7 @@ from .io import ROOT,config,read_json,write_json,sha,stream,status
 from .evaluation import MODELS,assert_lock
 from .metrics import metrics,linear_coefficients
 from .ranking import restrict_order
-from .masks import probability,observe,naive_zero
+from .masks import probability,observe,naive_zero,standardized_popularity
 from .weighting import ObservedView,ht
 from .candidates import sample_candidates
 from .uncertainty import mc_summary,reversal,paired_bootstrap,wilson
@@ -20,19 +20,24 @@ def summaries(rows,kind,p):
     grouping=['condition','model','metric']
     for key,g in df.groupby(grouping,sort=False):
         ref=float(p[key[1]+'_'+key[2]].mean())
-        out.append(dict(zip(grouping,key))|mc_summary(g.value.to_numpy(),ref)|{'reference':ref,'experiment':kind})
+        stats=mc_summary(g.value.to_numpy(),ref)
+        if kind=='candidate task change':
+            stats['mean_difference_from_full']=stats.pop('bias');stats['rms_difference_from_full']=stats.pop('rmse')
+        out.append(dict(zip(grouping,key))|stats|{'reference':ref,'experiment':kind})
     return pd.DataFrame(out)
 
-def gaps_summary(rows):
+def gaps_summary(rows,candidate_task=False):
     df=pd.DataFrame(rows);out=[]
     for (condition,a,b),g in df.groupby(['condition','a','b'],sort=False):
         ref=float(g.reference.iloc[0]);v=g.gap.to_numpy()
-        out.append({'condition':condition,'a':a,'b':b,'reference_gap':ref,**mc_summary(v,ref),**reversal(v,ref)})
+        stats=mc_summary(v,ref)
+        if candidate_task:stats['mean_gap_shift_from_full']=stats.pop('bias');stats['rms_gap_shift_from_full']=stats.pop('rmse')
+        out.append({'condition':condition,'a':a,'b':b,'reference_gap':ref,**stats,**reversal(v,ref)})
     return pd.DataFrame(out)
 
 def mask_study():
     start=time.perf_counter();p,base=inputs();cfg=config('experiments');R=cfg['repetitions'];valid=p['valid'];y=p['y'];reward=p['r'];orders={m:p[m+'_order'] for m in MODELS}
-    dcfg=read_json(ROOT/'configs/mask_offsets.json');z=(np.log1p(base['pos'])-dcfg['pop_mean'])/dcfg['pop_sd'];zz=z[p['items']]
+    dcfg=read_json(ROOT/'configs/mask_offsets.json');z=standardized_popularity(base['pos'],dcfg['pop_mean'],dcfg['pop_sd']);zz=z[p['items']]
     coeff={m:linear_coefficients(orders[m],valid) for m in MODELS};reward_coeff={m:linear_coefficients(orders[m],valid,reward=True) for m in MODELS}
     conditions=[(mech,a,.02) for mech in ('uniform','popularity','outcome') for a in (.1,.25,.5)]
     conditions += [(mech,a,.1) for mech in ('popularity','outcome') for a in (.25,.5)]
@@ -40,7 +45,7 @@ def mask_study():
     primary=assert_lock()['contrasts']
     for ci,(mech,alpha,epsilon) in enumerate(conditions):
         cond=f'{mech}|{alpha}|floor{epsilon}';constant=dcfg['offsets'].get(f'{mech}|{alpha}|{epsilon}')
-        pi=probability(mech,alpha,zz,y,constant,epsilon);mean_pi=float(pi[valid].mean());digest=hashlib.sha256();per_user={tuple(pair):np.zeros(len(y)) for pair in primary}
+        pi=probability(mech,alpha,zz,y,constant,epsilon);mean_pi=float(pi[valid].mean());digest=hashlib.sha256();per_user={tuple(pair):np.zeros(len(y)) for pair in primary};rep_user=np.empty((R,len(primary),len(y)))
         for rep in range(R):
             observed=observe(y,pi,valid,stream(7,ci,rep));digest.update(observed.indices.tobytes())
             naive=naive_zero(observed,y.shape)
@@ -61,13 +66,16 @@ def mask_study():
                             linear.append({'condition':cond,'rep':rep,'model':m,'target':target,'method':f'clip{clip}','reference':ref,'true_variance':float('nan'),'covered':False,'zero_variance':False,**ht(a,view,clip)})
             for a,b in pairs:
                 ref=float((p[a+'_ndcg10']-p[b+'_ndcg10']).mean());gaps.append({'condition':cond,'rep':rep,'a':a,'b':b,'reference':ref,'gap':float((values[a]-values[b]).mean())})
-            for a,b in primary:
+            for pair_index,(a,b) in enumerate(primary):
                 per_user[(a,b)]+=values[a]-values[b]
+                rep_user[rep,pair_index]=values[a]-values[b]
                 ref=float((p[a+'_dcg10']-p[b+'_dcg10']).mean());result=ht(coeff[a]-coeff[b],observed);half=1.959963984540054*np.sqrt(result['variance'])
                 linear.append({'condition':cond,'rep':rep,'model':a+'-'+b,'target':'dcg10','method':'paired_ht','reference':ref,'true_variance':float(np.sum(((coeff[a]-coeff[b])*y)**2*(1-pi)/pi)),'covered':abs(result['estimate']-ref)<=half,'zero_variance':result['variance']==0,**result})
         for idx,((a,b),v) in enumerate(per_user.items()):
             uncertainty.append({'condition':cond,'a':a,'b':b,'scope':'paired users on mean-over-masks differences',**paired_bootstrap(v/R,np.zeros(len(v)),stream(97,ci,idx),level=.95)})
         manifest.append({'condition':cond,'repetitions':R,'mask_sha256':digest.hexdigest(),'nominal_density':alpha,'expected_test_density':mean_pi,'epsilon':epsilon,'offset':constant})
+        private=ROOT/'artifacts/simulations';private.mkdir(parents=True,exist_ok=True)
+        np.savez(private/f'mask_user_differences_{ci}.npz',differences=rep_user,contrasts=np.array(primary),condition=cond)
         print('Masks complete:',cond,'expected density',round(mean_pi,4),flush=True)
     pd.DataFrame(rows).to_csv(ROOT/'reports/tables/mask_repetitions.csv',index=False);summaries(rows,'outcome masking',p).to_csv(ROOT/'reports/tables/mask_results.csv',index=False)
     pd.DataFrame(linear).to_csv(ROOT/'reports/tables/linear_repetitions.csv',index=False);gaps_summary(gaps).to_csv(ROOT/'reports/tables/mask_reversals.csv',index=False)
@@ -89,7 +97,7 @@ def candidate_study():
     start=time.perf_counter();p,base=inputs();valid=p['valid'];y=p['y'];reward=p['r'];orders={m:p[m+'_order'] for m in MODELS};weights=.1+base['item'][p['items']];R=config('experiments')['repetitions']
     rows=[];gaps=[];user_rows=[];manifest=[];pairs=[(a,b) for ai,a in enumerate(MODELS) for b in MODELS[ai+1:]];primary=assert_lock()['contrasts']
     for ci,(sampler,q) in enumerate((sampler,q) for sampler in ('uniform','popularity') for q in (50,100,500)):
-        cond=f'{sampler}|q{q}';digest=hashlib.sha256();per_user={tuple(pair):np.zeros(len(y)) for pair in primary}
+        cond=f'{sampler}|q{q}';digest=hashlib.sha256();per_user={tuple(pair):np.zeros(len(y)) for pair in primary};rep_user=np.empty((R,len(primary),len(y)))
         for rep in range(R):
             selected=sample_candidates(valid,weights,stream(8,ci,rep),q,sampler);digest.update(np.packbits(selected).tobytes());values={}
             for m in MODELS:
@@ -97,13 +105,17 @@ def candidate_study():
                 for metric in ('ndcg10','recall10','recall20','dcg10','reward10'):
                     rows.append({'condition':cond,'rep':rep,'model':m,'metric':metric,'value':float(mm[metric].mean()),'zero_positive_users':int(mm['zero_positive'].sum()),'q':q,'users':len(y)})
             for a,b in pairs:gaps.append({'condition':cond,'rep':rep,'a':a,'b':b,'reference':float((p[a+'_ndcg10']-p[b+'_ndcg10']).mean()),'gap':float((values[a]-values[b]).mean())})
-            for a,b in primary:per_user[(a,b)]+=values[a]-values[b]
+            for pair_index,(a,b) in enumerate(primary):
+                per_user[(a,b)]+=values[a]-values[b]
+                rep_user[rep,pair_index]=values[a]-values[b]
         for idx,((a,b),v) in enumerate(per_user.items()):
             user_rows.append({'condition':cond,'a':a,'b':b,'scope':'paired users on mean-over-candidate-draw differences',**paired_bootstrap(v/R,np.zeros(len(v)),stream(98,ci,idx),level=.95)})
         manifest.append({'condition':cond,'repetitions':R,'candidate_sha256':digest.hexdigest(),'min_q_eff':min(q,int(valid.sum(axis=1).min())),'max_q_eff':min(q,int(valid.sum(axis=1).max()))})
+        private=ROOT/'artifacts/simulations';private.mkdir(parents=True,exist_ok=True)
+        np.savez(private/f'candidate_user_differences_{ci}.npz',differences=rep_user,contrasts=np.array(primary),condition=cond)
         print('Candidates complete:',cond,flush=True)
     pd.DataFrame(rows).to_csv(ROOT/'reports/tables/candidate_repetitions.csv',index=False);summaries(rows,'candidate task change',p).to_csv(ROOT/'reports/tables/candidate_results.csv',index=False)
-    gaps_summary(gaps).to_csv(ROOT/'reports/tables/candidate_reversals.csv',index=False);pd.DataFrame(user_rows).to_csv(ROOT/'reports/tables/candidate_user_uncertainty.csv',index=False)
+    gaps_summary(gaps,candidate_task=True).to_csv(ROOT/'reports/tables/candidate_reversals.csv',index=False);pd.DataFrame(user_rows).to_csv(ROOT/'reports/tables/candidate_user_uncertainty.csv',index=False)
     complete=sample_candidates(valid,weights,stream(8,999),10**6,'uniform');assert np.array_equal(complete,valid)
     write_json(ROOT/'evidence/candidate_manifest.json',{'conditions':manifest,'seconds':time.perf_counter()-start,'scores_sha256':sha(ROOT/'artifacts/scores/test.npz'),'numpy':np.__version__,'full_endpoint_repetitions':1,'full_endpoint_exact':True,'law':'Generator.choice without replacement; normalized weights are not marginal inclusion probabilities'})
     (ROOT/'docs/ope_skip.md').write_text('# Optional E10 decision\n\nSkipped. Mandatory paired ranking, missingness and candidate experiments already answer the registered questions. OPE would add a different artificial policy target rather than real historical propensities; preserve focus and resource scope.\n')

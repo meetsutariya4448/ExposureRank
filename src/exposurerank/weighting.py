@@ -10,8 +10,10 @@ class ObservedView:
     size: int
 
     def __post_init__(self):
+        if any(np.asarray(x).ndim!=1 for x in (self.indices,self.values,self.probabilities)): raise ValueError('Observed arrays must be one dimensional')
         if len(self.indices)!=len(self.values) or len(self.values)!=len(self.probabilities): raise ValueError('Observed arrays disagree')
-        if np.any(self.probabilities<=0) or np.any(self.probabilities>1): raise ValueError('Observed positivity violated')
+        if not np.issubdtype(self.indices.dtype,np.integer) or np.any(self.indices<0) or np.any(self.indices>=self.size): raise ValueError('Observed index outside declared frame')
+        if not np.isfinite(self.values).all() or not np.isfinite(self.probabilities).all() or np.any(self.probabilities<=0) or np.any(self.probabilities>1): raise ValueError('Observed finite values/positivity violated')
         if np.any(np.diff(self.indices)<=0): raise ValueError('Observed indices must be distinct and sorted')
 
     def lookup(self,index):
@@ -22,6 +24,7 @@ class ObservedView:
 def ht(coefficients,observed,clip=None):
     a=np.asarray(coefficients,dtype=float).ravel()
     if len(a)!=observed.size: raise ValueError('Wrong declared frame size')
+    if not np.isfinite(a).all() or (clip is not None and (not np.isfinite(clip) or clip<=0)): raise ValueError('Finite coefficients and positive clipping threshold required')
     aa=a[observed.indices];pi=observed.probabilities;weights=1/pi
     if clip is not None: weights=np.minimum(weights,clip)
     contributions=aa*observed.values

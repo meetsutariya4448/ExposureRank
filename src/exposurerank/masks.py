@@ -3,6 +3,10 @@ from scipy.special import expit
 from scipy.optimize import brentq
 from .weighting import ObservedView
 
+def standardized_popularity(counts,mean,sd):
+    if sd<0 or not np.isfinite(sd): raise ValueError('Invalid training standard deviation')
+    return (np.log1p(counts)-mean)/sd if sd else np.zeros_like(counts,dtype=float)
+
 def offset(z,alpha,epsilon=.02,beta=2):
     if not epsilon<alpha<1-epsilon: raise ValueError('Density must lie inside attainable floor')
     return float(brentq(lambda c:np.mean(epsilon+(1-2*epsilon)*expit(c+beta*z))-alpha,-80,80,xtol=1e-12))
@@ -17,7 +21,7 @@ def probability(mechanism,alpha,pop_z,y,constant=None,epsilon=.02):
 
 def observe(values,probabilities,valid,rng):
     # Only this simulator owns the entire probability/outcome array.
-    if np.any(probabilities[valid]<=0) or np.any(probabilities[valid]>1): raise ValueError('Full design positivity violated')
+    if not np.isfinite(probabilities[valid]).all() or np.any(probabilities[valid]<=0) or np.any(probabilities[valid]>1): raise ValueError('Full design positivity violated')
     chosen=valid & (rng.random(valid.shape)<probabilities)
     ix=np.flatnonzero(chosen.ravel())
     return ObservedView(ix,values.ravel()[ix].copy(),probabilities.ravel()[ix].copy(),values.size)

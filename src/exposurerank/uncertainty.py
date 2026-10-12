@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.stats import norm
+from scipy.stats import norm,t
 
 def paired_bootstrap(a,b,rng,draws=5000,level=.975):
     d=np.asarray(a,dtype=float)-np.asarray(b,dtype=float)
@@ -11,14 +11,17 @@ def paired_bootstrap(a,b,rng,draws=5000,level=.975):
     return {'gap':float(d.mean()),'lo':float(lo),'hi':float(hi),'users':len(d),'draws':draws,'level':level}
 
 def wilson(k,n,level=.95):
-    if n<=0: raise ValueError('Positive repetitions required')
+    if n<=0 or not 0<=k<=n: raise ValueError('Valid counts and positive repetitions required')
     z=norm.ppf((1+level)/2);p=k/n;denom=1+z*z/n
     center=(p+z*z/(2*n))/denom;radius=z*np.sqrt(p*(1-p)/n+z*z/(4*n*n))/denom
     return float(0 if k==0 else max(0,center-radius)),float(1 if k==n else min(1,center+radius))
 
 def mc_summary(values,reference):
     v=np.asarray(values,dtype=float);error=v-reference
-    return {'mean':float(v.mean()),'bias':float(error.mean()),'rmse':float(np.sqrt(np.mean(error**2))),'mcse':float(v.std(ddof=1)/np.sqrt(len(v))) if len(v)>1 else 0,'repetitions':len(v)}
+    if v.ndim!=1 or not len(v) or not np.isfinite(v).all(): raise ValueError('Finite independent repetition values required')
+    se=float(v.std(ddof=1)/np.sqrt(len(v))) if len(v)>1 else 0
+    radius=float(t.ppf(.975,len(v)-1))*se if len(v)>1 else 0
+    return {'mean':float(v.mean()),'bias':float(error.mean()),'rmse':float(np.sqrt(np.mean(error**2))),'mcse':se,'mc_mean_lo':float(v.mean()-radius),'mc_mean_hi':float(v.mean()+radius),'mc_level':.95,'repetitions':len(v)}
 
 def reversal(values,reference,tolerance=.001):
     if abs(reference)<=tolerance: return {'state':'reference near tie','reversals':0,'rate':float('nan'),'lo':float('nan'),'hi':float('nan')}

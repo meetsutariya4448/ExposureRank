@@ -17,6 +17,15 @@ mask=pd.read_csv(ROOT/'reports/tables/mask_repetitions.csv');cand=pd.read_csv(RO
 assert mask.condition.nunique()==13 and cand.condition.nunique()==6
 assert (mask.groupby(['condition','model','metric']).size()==200).all()
 assert (cand.groupby(['condition','model','metric']).size()==200).all()
+private_differences=list((ROOT/'artifacts/simulations').glob('*_user_differences_*.npz'))
+assert len(private_differences)==19
+for path in private_differences:
+    private=dict(np.load(path));d=private['differences'];assert d.shape==(200,2,1411)
+    experiment='mask' if path.name.startswith('mask') else 'candidate'
+    source=mask if experiment=='mask' else cand
+    scalar=source[(source.condition==str(private['condition']))&(source.metric=='ndcg10')].pivot(index='rep',columns='model',values='value')
+    for idx,(a,b) in enumerate(private['contrasts']):
+        assert np.allclose(d[:,idx,:].mean(axis=1),scalar[a]-scalar[b],atol=1e-12)
 full=pd.read_csv(ROOT/'reports/tables/full_reference.csv');assert len(full)==5 and (full.users==1411).all() and (full.pairs==935397).all()
 assert full.ndcg10.between(0,1).all() and full.recall10.between(0,1).all()
 score=read_json(ROOT/'evidence/score_manifest.json');assert score['sha256']==sha(ROOT/'artifacts/scores/test.npz')

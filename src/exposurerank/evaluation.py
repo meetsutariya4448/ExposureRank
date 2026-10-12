@@ -5,7 +5,7 @@ from .io import ROOT,config,read_json,write_json,sha,revision,stream,status
 from .data import load_pairs,frame
 from .training import make_model,score,seed_all
 from .baselines import baseline_score
-from .ranking import Catalog
+from .ranking import Catalog,restrict_order
 from .metrics import metrics,linear_coefficients
 from .masks import offset
 from .uncertainty import paired_bootstrap
@@ -68,6 +68,24 @@ def evaluate():
         for m in MODELS:sensitivity.append({'model':m,'target':'bounded_reward','parameter':cap,'reward10':float(metrics(y,rr,orders[m],cat.valid)['reward10'].mean())})
     for source,rr in [('recomputed',cat.outcomes(np.minimum(test['recomputed'],2)/2)),('published',r)]:
         for m in MODELS:sensitivity.append({'model':m,'target':source,'parameter':2,'reward10':float(metrics(y,rr,orders[m],cat.valid)['reward10'].mean())})
+    flagged=np.abs(test['ratio']-test['recomputed'])>.0001+1e-6*np.abs(test['ratio'])
+    keep=cat.valid & ~cat.outcomes(flagged).astype(bool)
+    for m in MODELS:
+        mm=metrics(y*keep,r*keep,restrict_order(orders[m],keep),keep)
+        sensitivity.append({'model':m,'target':'published_discrepancy_excluded','parameter':2,'reward10':float(mm['reward10'].mean()),'excluded_test_pairs':int(flagged.sum()),'users':nu})
     pd.DataFrame(sensitivity).to_csv(ROOT/'reports/tables/target_sensitivity.csv',index=False)
+    diagnostics=[]
+    for split_name,split_number,path in [('validation',1,'validation.npz'),('test',2,'test.npz')]:
+        ff=frame(d,split_number);pred=dict(np.load(ROOT/'artifacts/scores'/path))
+        for model in MODELS:
+            probability=np.clip(pred[model].astype(float),1e-12,1-1e-12)
+            loss=float(np.mean(-ff['y']*np.log(probability)-(1-ff['y'])*np.log1p(-probability)))
+            diagnostics.append({'split':split_name,'model':model,'binary_log_loss':loss,'observed_pairs':len(ff['y']),'clip_epsilon':1e-12,'purpose':'postselection diagnostic; never used to reselect rankers'})
+    pd.DataFrame(diagnostics).to_csv(ROOT/'reports/tables/predictive_loss.csv',index=False)
+    seed_df=pd.DataFrame(seed_rows)
+    seed_summary=seed_df.groupby('family')[['ndcg10','recall10','reward10']].agg(['mean','std','min','max'])
+    seed_summary.columns=['_'.join(c) for c in seed_summary.columns]
+    seed_summary.reset_index().to_csv(ROOT/'reports/tables/seed_summary.csv',index=False)
+    write_json(ROOT/'evidence/ratio_sensitivity.json',{'all_source_discrepancies':int((np.abs(d['ratio']-d['recomputed'])>.0001+1e-6*np.abs(d['ratio'])).sum()),'excluded_test_pairs':int(flagged.sum()),'all_test_users_retained':nu,'minimum_retained_test_catalog':int(keep.sum(axis=1).min()),'policy':'prespecified graded-reward sensitivity, fixed scores/rank restriction; no refitting or target selection'})
     status(['E6'],'Locked common test scores; full_reference.csv, primary_contrasts.csv and private score_manifest hashes')
     print(pd.DataFrame(rows).to_string(index=False),flush=True);print(pd.DataFrame(contrasts).to_string(index=False),flush=True)

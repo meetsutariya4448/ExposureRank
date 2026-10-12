@@ -31,6 +31,11 @@ for rel in ('data/derived/pairs.npz','artifacts/scores/test.npz','artifacts/scor
     one=dict(np.load(ROOT/rel));two=dict(np.load(dest/rel));assert one.keys()==two.keys()
     assert all(np.array_equal(one[k],two[k]) for k in one)
     comparisons.append({'path':rel,'result':'all arrays byte-exact values; container timestamps ignored'})
+for path in sorted((ROOT/'artifacts/simulations').glob('*_user_differences_*.npz')):
+    other=dest/'artifacts/simulations'/path.name
+    one=dict(np.load(path));two=dict(np.load(other))
+    assert one.keys()==two.keys() and all(np.array_equal(one[k],two[k]) for k in one)
+    comparisons.append({'path':'artifacts/simulations/'+path.name,'result':'exact private per-user/per-repetition differences and contrast identities'})
 for path in sorted((ROOT/'reports/tables').glob('*.csv')):
     if path.name=='training_runs.csv':continue
     a=pd.read_csv(path);b=pd.read_csv(dest/'reports/tables'/path.name);assert a.shape==b.shape and a.columns.tolist()==b.columns.tolist()
@@ -44,5 +49,6 @@ for name,key in [('mask_manifest.json','mask_sha256'),('candidate_manifest.json'
 for name in ('mask_reversals.csv','candidate_reversals.csv'):
     a=pd.read_csv(ROOT/'reports/tables'/name);b=pd.read_csv(dest/'reports/tables'/name)
     assert a[['state','reversals']].equals(b[['state','reversals']])
-write_json(ROOT/'evidence/reproduction.json',{'status':'passed','source_revision':revision(),'fresh_environment':True,'complete_training_and_simulation_rebuilt':True,'seconds':time.perf_counter()-start,'compared_outputs':comparisons,'selection_and_reversal_categories_exact':True,'all_private_score_arrays_exact':True,'public_figures':'source tables checked; PNG metadata bytes not required identical','log':'evidence/reproduction.log'})
+from exposurerank.io import sha
+write_json(ROOT/'evidence/reproduction.json',{'status':'passed','source_revision':revision(),'fresh_environment':True,'complete_training_and_simulation_rebuilt':True,'seconds':time.perf_counter()-start,'compared_outputs':comparisons,'selection_and_reversal_categories_exact':True,'all_private_score_arrays_exact':True,'statistical_source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in sorted((ROOT/'src').rglob('*.py'))},'public_figures':'source tables checked; PNG metadata bytes not required identical','log':'evidence/reproduction.log'})
 print('Complete fresh-environment reconstruction passed:',len(comparisons),'outputs checked')

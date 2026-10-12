@@ -15,7 +15,9 @@ def seed_all(seed):
     torch.set_num_threads(config('models')['threads']);torch.manual_seed(seed)
     torch.use_deterministic_algorithms(True)
 
-def make_model(family,nu,ni,d,p0): return (MatrixFactorization if family=='mf' else NeuralInteraction)(nu,ni,d,p0)
+def make_model(family,nu,ni,d,p0):
+    if family not in ('mf','neural'): raise ValueError('Unregistered learned family')
+    return (MatrixFactorization if family=='mf' else NeuralInteraction)(nu,ni,d,p0)
 
 def score(model,f,batch=65536):
     model.eval();out=[]
