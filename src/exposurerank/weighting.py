@@ -12,7 +12,7 @@ class ObservedView:
     def __post_init__(self):
         if len(self.indices)!=len(self.values) or len(self.values)!=len(self.probabilities): raise ValueError('Observed arrays disagree')
         if np.any(self.probabilities<=0) or np.any(self.probabilities>1): raise ValueError('Observed positivity violated')
-        if len(np.unique(self.indices))!=len(self.indices): raise ValueError('Duplicated observed pair')
+        if np.any(np.diff(self.indices)<=0): raise ValueError('Observed indices must be distinct and sorted')
 
     def lookup(self,index):
         found=np.flatnonzero(self.indices==index)

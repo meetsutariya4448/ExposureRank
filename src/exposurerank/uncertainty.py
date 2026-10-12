@@ -14,7 +14,7 @@ def wilson(k,n,level=.95):
     if n<=0: raise ValueError('Positive repetitions required')
     z=norm.ppf((1+level)/2);p=k/n;denom=1+z*z/n
     center=(p+z*z/(2*n))/denom;radius=z*np.sqrt(p*(1-p)/n+z*z/(4*n*n))/denom
-    return float(max(0,center-radius)),float(min(1,center+radius))
+    return float(0 if k==0 else max(0,center-radius)),float(1 if k==n else min(1,center+radius))
 
 def mc_summary(values,reference):
     v=np.asarray(values,dtype=float);error=v-reference

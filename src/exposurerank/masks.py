@@ -17,6 +17,7 @@ def probability(mechanism,alpha,pop_z,y,constant=None,epsilon=.02):
 
 def observe(values,probabilities,valid,rng):
     # Only this simulator owns the entire probability/outcome array.
+    if np.any(probabilities[valid]<=0) or np.any(probabilities[valid]>1): raise ValueError('Full design positivity violated')
     chosen=valid & (rng.random(valid.shape)<probabilities)
     ix=np.flatnonzero(chosen.ravel())
     return ObservedView(ix,values.ravel()[ix].copy(),probabilities.ravel()[ix].copy(),values.size)

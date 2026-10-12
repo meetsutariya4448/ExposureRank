@@ -18,6 +18,11 @@ def tie_keys(items):
 def valid(play,duration,ratio):
     return np.isfinite(play)&(play>=0)&np.isfinite(duration)&(duration>0)&np.isfinite(ratio)&(ratio>=0)
 
+def compact_map(raw,known):
+    idx=np.searchsorted(known,raw)
+    if np.any(idx>=len(known)) or not np.array_equal(known[idx],raw): raise ValueError('Unknown entity ID')
+    return idx.astype(np.int32)
+
 def acquire(source=None):
     dest=ROOT/'data/raw/KuaiRec.zip'
     if not dest.exists():
@@ -61,7 +66,7 @@ def prepare(source=None):
     df=con.execute('SELECT user_id,video_id,watch_ratio,play_duration/video_duration recomputed FROM small ORDER BY user_id,video_id').fetchdf()
     raw_u=df.user_id.to_numpy();raw_i=df.video_id.to_numpy();split=pair_split(raw_u,raw_i)
     users=np.unique(raw_u[split==0]);items=np.unique(raw_i[split==0])
-    u=np.searchsorted(users,raw_u).astype(np.int32);i=np.searchsorted(items,raw_i).astype(np.int32)
+    u=compact_map(raw_u,users);i=compact_map(raw_i,items)
     support_u=np.bincount(u[split==0],minlength=len(users));support_i=np.bincount(i[split==0],minlength=len(items))
     assert support_u.min()>=100 and support_i.min()>=20
     ratio=df.watch_ratio.to_numpy(dtype=np.float64);recomputed=df.recomputed.to_numpy(dtype=np.float64)

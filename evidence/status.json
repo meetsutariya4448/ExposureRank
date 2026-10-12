@@ -13,5 +13,20 @@
     "status": "passed",
     "evidence": "Protocol b702ee0; complete archive/SQL/split audits; manifests/data.json, split.json, catalogs.json",
     "revision": "b702ee02ba950a35b4d72e34d734bedce4c4efa7"
+  },
+  "E3": {
+    "status": "passed",
+    "evidence": "Three train-only baselines; baseline_validation.csv and bias_convergence.json",
+    "revision": "78305f378d2f632b386d8364b1a710a146493163"
+  },
+  "E4": {
+    "status": "passed",
+    "evidence": "mf: six configs and selected seeds17/29/43 actually trained; evidence/runs.json",
+    "revision": "78305f378d2f632b386d8364b1a710a146493163"
+  },
+  "E5": {
+    "status": "passed",
+    "evidence": "neural: six configs and selected seeds17/29/43 actually trained; evidence/runs.json",
+    "revision": "78305f378d2f632b386d8364b1a710a146493163"
   }
 }

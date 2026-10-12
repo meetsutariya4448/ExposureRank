@@ -2,7 +2,7 @@ import hashlib,itertools
 import numpy as np
 import pytest
 import torch
-from exposurerank.data import pair_split,valid,tie_keys
+from exposurerank.data import pair_split,valid,tie_keys,compact_map
 from exposurerank.baselines import priors,baseline_score
 from exposurerank.factorization import MatrixFactorization
 from exposurerank.neural import NeuralInteraction
@@ -20,6 +20,15 @@ def test_pair_sha_independent_known_bytes():
         h=hashlib.sha256(('ExposureRank-split-v1|%d|%d'%(a,b)).encode()).hexdigest()[:16]
         v=int(h,16);expected.append(0 if v<.6*2**64 else (1 if v<.8*2**64 else 2))
     assert np.array_equal(pair_split(u,i),expected)
+
+def test_sparse_maps_unknown_rejected():
+    assert compact_map(np.array([100,20]),np.array([20,100])).tolist()==[1,0]
+    with pytest.raises(ValueError):compact_map(np.array([50]),np.array([20,100]))
+
+def test_heldout_label_permutation_cannot_change_training_features():
+    u=np.arange(100);i=np.arange(100)[::-1];s=pair_split(u,i);y=np.ones(100);changed=y.copy();changed[s==2]=0
+    a=priors(u[s==0],i[s==0],y[s==0],100,100);b=priors(u[s==0],i[s==0],changed[s==0],100,100)
+    assert a['p0']==b['p0'] and np.array_equal(a['item'],b['item'])
 
 @pytest.mark.parametrize('play,duration,ratio,expected',[(1,0,1,False),(-1,1,1,False),(1,1,float('nan'),False),(1,1,-1,False),(2,1,2,True)])
 def test_invalid_feedback(play,duration,ratio,expected):

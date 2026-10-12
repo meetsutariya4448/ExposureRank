@@ -7,9 +7,9 @@ Local implementation only. No public publishing, paid cloud, other-project edits
 | E0 | passed | Protocol b702ee0; complete archive/SQL/split audits; manifests/data.json, split.json, catalogs.json |
 | E1 | passed | Protocol b702ee0; complete archive/SQL/split audits; manifests/data.json, split.json, catalogs.json |
 | E2 | passed | Protocol b702ee0; complete archive/SQL/split audits; manifests/data.json, split.json, catalogs.json |
-| E3 | not started |  |
-| E4 | not started |  |
-| E5 | not started |  |
+| E3 | passed | Three train-only baselines; baseline_validation.csv and bias_convergence.json |
+| E4 | passed | mf: six configs and selected seeds17/29/43 actually trained; evidence/runs.json |
+| E5 | passed | neural: six configs and selected seeds17/29/43 actually trained; evidence/runs.json |
 | E6 | not started |  |
 | E7 | not started |  |
 | E8 | not started |  |
