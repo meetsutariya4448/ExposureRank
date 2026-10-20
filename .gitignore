@@ -12,3 +12,13 @@ evidence/tests.xml
 *.egg-info/
 reports/tables/per_user*
 *.duckdb*
+
+# GitHub publication: local credentials and machine state
+.env
+.env.*
+!.env.example
+.aws/
+.ssh/
+.databrickscfg
+*.pem
+*.key

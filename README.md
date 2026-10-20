@@ -1,5 +1,7 @@
 # ExposureRank
 
+Source repository: [ExposureRank](https://github.com/meetsutariya4448/ExposureRank). See [GitHub publication scope](docs/github_publication.md) for included assets and reproduction boundaries.
+
 **Reliable recommendation evaluation under incomplete user feedback.** A local research implementation for deciding whether an offline model comparison survives changes in outcome observation and candidate selection.
 
 Start with [technical report](reports/technical_report.md), [decision memo](reports/decision_memo.md), [deliverables](DELIVERABLES.md), and [implementation status](IMPLEMENTATION_STATUS.md). Completion requires the executed gate/test/reproduction records, not just files.
@@ -71,6 +73,6 @@ Stages can be run individually: prepare → pytest → train → freeze → comm
 
 Selected users/items, unknown original exposure mechanism, absent/blocked cells, missing clocks, heavy ratio tails, static warm holdout, finite seeds, empirical bootstrap and simulation-specific positivity all limit interpretation. Candidate tasks have different denominators;200 repetitions give imperfect MC precision. Negative/inconclusive findings are retained.
 
-License conflict: metadata CC BY4 versus embedded/repository CC BY-SA4 is unresolved. See DATA_NOTICE.md. Original code MIT; conservatively attributed dataset-derived aggregates/reports/figures CC BY-SA4. No raw logs, real maps/per-user metrics, scores, embeddings or checkpoints are redistributed. Public publishing requires a separate decision; no public URLs are claimed. The first four projects and master resume are unchanged.
+License conflict: metadata CC BY4 versus embedded/repository CC BY-SA4 is unresolved. See DATA_NOTICE.md. Original code MIT; conservatively attributed dataset-derived aggregates/reports/figures CC BY-SA4. No raw logs, real maps/per-user metrics, scores, embeddings or checkpoints are redistributed. GitHub code-and-aggregate publication was authorized on 2026-10-20; no deployed interactive viewer is claimed. The first four projects and master resume are unchanged.
 
 Blueprint review: [conformance audit](docs/blueprint_conformance_audit.md), [executed checks](evidence/blueprint_conformance.json), and updated local archive dist/ExposureRank_blueprint_verified.zip. The mandatory research core is complete; the aggregate interactive viewer remains the separate presentation step. Optional E10 OPE is skipped.
